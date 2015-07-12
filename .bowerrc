@@ -1,0 +1,8 @@
+{
+    "directory": "public/components/",
+    "scripts": {
+        "preinstall": "bowinst preinstall %",
+        "postinstall": "bowinst install %",
+        "preuninstall": "bowinst uninstall %"
+    }
+}
