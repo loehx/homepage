@@ -14,5 +14,10 @@
     "public/components/",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "lesshat": "~3.0.2",
+    "modernizr": "~2.8.3"
+  }
 }
