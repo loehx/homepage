@@ -1,0 +1,11 @@
+{
+  "lang": "de",
+  "langs": [{
+    "code": "en",
+    "name": "Englisch"
+  },
+  {
+    "code": "de",
+    "name": "Deutsch"
+  }]
+}
