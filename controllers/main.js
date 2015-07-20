@@ -43,21 +43,29 @@ MainController.get = function(filePath, callback) {
 MainController.parseFile = function(filePath) {
     var cache = MainController.cache
     var deferred = Q.defer()
-    if (cache[filePath])
-        return deferred.resolve(cache[filePath])
+    
+    // See if it's already cached
+    if (cache[filePath]) {
+        deferred.resolve(cache[filePath]) 
+        return deferred.promise
+    }
 
+    // Read the file contents as UTF8
     fs.readFile(filePath, 'utf-8', function(err, content) {
         if (err) return deferred.resolve()
-    
+
+        // Try to parse the contents
         try {
             var result = JSON.parse(content)
             return MainController.resolveReferences(result, path.dirname(filePath))
                 .then(function() {
+                    // Cache and return the parsed object
                     cache[filePath] = result
                     deferred.resolve(result)
                 })
         }
         catch (err) {
+            // Cache and return the contents as text
             cache[filePath] = content
             deferred.resolve(content)
         }
@@ -68,7 +76,8 @@ MainController.parseFile = function(filePath) {
 
 /**
  * Iterates through all values in the passed obect (recursive).
- * If a value is a relative path, we try to find and parse it too.
+ * If a value is a relative path (starting with '.'), try to find and parse it too.
+ * All keys named 'inherit' of type Array will be merged into the model.
  * @param {Object} json Object to resolve.
  * @param {String} rootFolder Root folder.
  */
@@ -77,21 +86,40 @@ MainController.resolveReferences = function(json, rootFolder) {
         self = this
 
     forEachValueRecursive(json, function(obj, key, value) {
-        if (typeof value !== 'string' || value[0] !== '.')
-            return
-
-        var filePath = path.join(rootFolder, value)
-        var promise = self.parseFile(filePath)
-            .then(function(content) {
-                if (content) obj[key] = content
-            })
-        promises.push(promise)
+        if (key === 'inherit' && std.isArray(value)) {
+            
+            // Resolve inheritance to other .json files
+            for (var i = 0; i < value.length; i++) {
+                var filePath = path.join(rootFolder, value[i])
+                var promise = self.parseFile(filePath)
+                    .then(function(content) {
+                        // Merge the inherited file with the current
+                        if (typeof content === 'object') std.assign(obj, content)
+                    })
+                promises.push(promise)
+            }
+        }
+        else if (typeof value === 'string' && value[0] === '.') {
+            
+            // Resolve file reference
+            var filePath = path.join(rootFolder, value)
+            var promise = self.parseFile(filePath)
+                .then(function(content) {
+                    // Replace the reference by the file contents
+                    if (content) obj[key] = content
+                })
+            promises.push(promise)
+        }
     })
 
     return Q.all(promises)
 }
 
-
+/**
+ * Iterates through an object deeply.
+ * @param {Object} obj Object to iterate
+ * @param {Function(obj, key, value)} iteratee Function that gets called for each key.
+ */
 function forEachValueRecursive(obj, iteratee) {
     for (var k in obj) {
         var value = obj[k]
@@ -121,5 +149,4 @@ controller.get('/en/home', function(err, data) {
         console.log('SUCCESS: Factory respond successfully!', data)
     }
 })
-
 */
