@@ -43,10 +43,10 @@ MainController.get = function(filePath, callback) {
 MainController.parseFile = function(filePath) {
     var cache = MainController.cache
     var deferred = Q.defer()
-    
+
     // See if it's already cached
     if (cache[filePath]) {
-        deferred.resolve(cache[filePath]) 
+        deferred.resolve(cache[filePath])
         return deferred.promise
     }
 
@@ -87,20 +87,23 @@ MainController.resolveReferences = function(json, rootFolder) {
 
     forEachValueRecursive(json, function(obj, key, value) {
         if (key === 'inherit' && std.isArray(value)) {
-            
+
             // Resolve inheritance to other .json files
             for (var i = 0; i < value.length; i++) {
                 var filePath = path.join(rootFolder, value[i])
                 var promise = self.parseFile(filePath)
                     .then(function(content) {
                         // Merge the inherited file with the current
-                        if (typeof content === 'object') std.assign(obj, content)
+                        if (typeof content === 'object')
+                            std.assign(obj, content, function(value, other) {
+                                return value || other
+                            })
                     })
                 promises.push(promise)
             }
         }
         else if (typeof value === 'string' && value[0] === '.') {
-            
+
             // Resolve file reference
             var filePath = path.join(rootFolder, value)
             var promise = self.parseFile(filePath)
