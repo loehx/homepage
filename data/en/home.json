@@ -1,5 +1,5 @@
 {
-  "config": "default.json",
+  "config": "./config.json",
   "title": "Alexander-Loehn.com",
-  "intro": "intro.md"
+  "intro": "./intro.md"
 }
