@@ -13,6 +13,7 @@ var app = express();
 
 // view engine setup
 app.engine('mustache', mustacheExpress());
+mustacheExpress.tags = ["<%", "%>"];
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'mustache');
 

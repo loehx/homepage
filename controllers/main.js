@@ -2,7 +2,7 @@ var fs = require("fs")
 var path = require("path")
 var Q = require("q")
 var std = require("../std")
-
+var markdown = require("markdown").markdown
 
 /**
  * Organizes the website content.
@@ -14,20 +14,20 @@ var MainController = function() {
     if (!fs.existsSync(this.dataFolder))
         return console.log("'data' folder could not be found!", this.dataFolder)
 
-    this.get = MainController.get.bind(this)
+    this.getModel = MainController.prototype.getModel.bind(this)
 }
 
 
 MainController.cache = {}
 
 /**
- * Gets the specific data using a virtual path
+ * Gets the specific data model using a virtual path
  * @param {String} filePath The path to the data source. (eg. /en/home)
  * @param {Function} callback Function to receive error or object.
  */
-MainController.get = function(filePath, callback) {
-    filePath = path.join(this.dataFolder, filePath.trim('/') + '.json')
-    var a = MainController.parseFile(filePath)
+MainController.prototype.getModel = function(virtualPath, callback) {
+    virtualPath = path.join(this.dataFolder, virtualPath.trim('/') + '.json')
+    var a = MainController.parseFile(virtualPath)
         .then(function(content) {
             callback(null, content)
         })
@@ -127,7 +127,7 @@ function forEachValueRecursive(obj, iteratee) {
     for (var k in obj) {
         var value = obj[k]
         iteratee(obj, k, value)
-        if (typeof value === 'object')
+        if (std.isPlainObject(value))
             forEachValueRecursive(value, iteratee)
     }
 }
@@ -142,7 +142,7 @@ var start = new Date();
 
 console.log('Try to get data from the Content Factory ...')
 
-controller.get('/en/home', function(err, data) {
+controller.getModel('/en/home', function(err, data) {
     var duration = new Date() - start;
     console.log('BENCHMARK: ' + duration + ' ms');
     if (err) {
