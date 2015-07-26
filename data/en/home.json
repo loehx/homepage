@@ -1,5 +1,6 @@
 {
   "inherit": ["./config.json"],
+  "view": "home.html",
   "title": "Alexander-Loehn.com",
   "intro": "./intro.md"
 }

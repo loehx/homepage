@@ -4,7 +4,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mustacheExpress = require('mustache-express');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -12,11 +11,12 @@ var users = require('./routes/users');
 var app = express();
 
 // view engine setup
-app.engine('mustache', mustacheExpress());
-mustacheExpress.tags = ["<%", "%>"];
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'mustache');
-
+app.set('view engine', 'html') // use .html extension for templates
+app.set('layout', 'layout') // use layout.html as the default layout
+app.set('views', __dirname + '/views')
+// app.set('partials', {foo: 'foo'}) // define partials available to all pages
+app.enable('view cache')
+app.engine('html', require('hogan-express'))
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
