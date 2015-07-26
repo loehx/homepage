@@ -17,6 +17,7 @@ app.set('views', __dirname + '/views')
 // app.set('partials', {foo: 'foo'}) // define partials available to all pages
 app.enable('view cache')
 app.engine('html', require('hogan-express'))
+app.locals.pretty = true;
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
