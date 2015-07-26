@@ -29,6 +29,7 @@ MainController.prototype.getModel = function(virtualPath, callback) {
     virtualPath = path.join(this.dataFolder, virtualPath.trim('/') + '.json')
     var a = MainController.parseFile(virtualPath)
         .then(function(content) {
+            translateMarkdown(content)
             callback(null, content)
         })
 }
@@ -65,7 +66,10 @@ MainController.parseFile = function(filePath) {
                 })
         }
         catch (err) {
-            // Cache and return the contents as text
+            // Make sure markdown content is marked as markdown.
+            if (path.extname(filePath) === '.md') 
+                content = '(markdown)' + content;
+                
             cache[filePath] = content
             deferred.resolve(content)
         }
@@ -116,6 +120,18 @@ MainController.resolveReferences = function(json, rootFolder) {
     })
 
     return Q.all(promises)
+}
+
+/**
+ * Iterates through all values in an object and converts 
+ * all strings containing "markdown" to HTML.
+ * */
+function translateMarkdown(obj) {
+    forEachValueRecursive(obj, function(obj, key, value) {
+       if (std.isString(value) && value.indexOf('(markdown)') !== -1) {
+           obj[key] = markdown.toHTML(value.replace('(markdown)', ''))
+       }
+    })
 }
 
 /**
