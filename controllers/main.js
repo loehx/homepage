@@ -89,7 +89,7 @@ MainController.resolveReferences = function(json, rootFolder) {
     var promises = [],
         self = this
 
-    forEachValueRecursive(json, function(obj, key, value) {
+    std.forEachValueRecursive(json, function(obj, key, value) {
         if (key === 'inherit' && std.isArray(value)) {
 
             // Resolve inheritance to other .json files
@@ -127,26 +127,13 @@ MainController.resolveReferences = function(json, rootFolder) {
  * all strings containing "markdown" to HTML.
  * */
 function translateMarkdown(obj) {
-    forEachValueRecursive(obj, function(obj, key, value) {
+    std.forEachValueRecursive(obj, function(obj, key, value) {
        if (std.isString(value) && value.indexOf('(markdown)') !== -1) {
            obj[key] = markdown.toHTML(value.replace('(markdown)', ''))
        }
     })
 }
 
-/**
- * Iterates through an object deeply.
- * @param {Object} obj Object to iterate
- * @param {Function(obj, key, value)} iteratee Function that gets called for each key.
- */
-function forEachValueRecursive(obj, iteratee) {
-    for (var k in obj) {
-        var value = obj[k]
-        iteratee(obj, k, value)
-        if (std.isPlainObject(value))
-            forEachValueRecursive(value, iteratee)
-    }
-}
 
 module.exports = MainController
 

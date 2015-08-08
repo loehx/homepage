@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var nunjucks = require('nunjucks')
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -11,13 +12,15 @@ var users = require('./routes/users');
 var app = express();
 
 // view engine setup
-app.set('view engine', 'html') // use .html extension for templates
-app.set('layout', 'layout') // use layout.html as the default layout
-app.set('views', __dirname + '/views')
-// app.set('partials', {foo: 'foo'}) // define partials available to all pages
+nunjucks.configure('views', {
+    autoescape: true,
+    express: app
+});
+
 app.enable('view cache')
-app.engine('html', require('hogan-express'))
 app.locals.pretty = true;
+
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -45,7 +48,7 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.render('error', {
+    res.render('error.html', {
       message: err.message,
       error: err
     });
@@ -56,7 +59,7 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
-  res.render('error', {
+  res.render('error.html', {
     message: err.message,
     error: {}
   });

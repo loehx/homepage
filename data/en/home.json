@@ -1,6 +1,10 @@
 {
   "inherit": ["./config.json"],
-  "view": "home",
+  "view": "home.html",
   "title": "Alexander-Loehn.com",
-  "intro": "./intro.md"
+  "intro": "./intro.md",
+  "contents": [{
+      "view": "partials/article",
+      "text": "./articles/test-article.md"
+  }]
 }
