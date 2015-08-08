@@ -3,6 +3,7 @@ var path = require("path")
 var Q = require("q")
 var std = require("../std")
 var markdown = require("markdown").markdown
+var fse = require('fs-extra')
 
 /**
  * Organizes the website content.
@@ -17,8 +18,6 @@ var MainController = function() {
     this.getModel = MainController.prototype.getModel.bind(this)
 }
 
-
-MainController.cache = {}
 
 /**
  * Gets the specific data model using a virtual path
@@ -44,36 +43,44 @@ MainController.prototype.getModel = function(virtualPath, callback) {
 MainController.parseFile = function(filePath) {
     var cache = MainController.cache
     var deferred = Q.defer()
+    var extension = path.extname(filePath)
 
-    // See if it's already cached
-    if (cache[filePath]) {
-        deferred.resolve(cache[filePath])
-        return deferred.promise
+    switch (extension) {
+        case '.json':
+            fs.readFile(filePath, 'utf-8', function(err, content) {
+                if (err) return deferred.resolve()
+                var result = JSON.parse(content)
+                MainController.resolveReferences(result, path.dirname(filePath))
+                    .then(function() {
+                        deferred.resolve(result)
+                    })
+            })
+            break;
+        case '.md':
+            fs.readFile(filePath, 'utf-8', function(err, content) {
+                if (err) return deferred.resolve()
+                deferred.resolve('(markdown)' + content);
+            })
+            break;
+        case '.txt':
+            fs.readFile(filePath, 'utf-8', function(err, content) {
+                if (err) return deferred.resolve()
+                deferred.resolve(content);
+            })
+            break;
+        case '.html':
+        case '.htm':
+            // Skip html files ...
+            deferred.resolve();
+            break;
+        default:
+            var basename = path.basename(filePath)
+            fse.copy(filePath, path.join(__dirname, '../public/assets/', basename), function(err) {
+                if (err) console.warn("Couldn't copy ", filePath, " to assets folder.", err)
+            })
+            deferred.resolve('/assets/' + basename)
+            break;
     }
-
-    // Read the file contents as UTF8
-    fs.readFile(filePath, 'utf-8', function(err, content) {
-        if (err) return deferred.resolve()
-
-        // Try to parse the contents
-        try {
-            var result = JSON.parse(content)
-            return MainController.resolveReferences(result, path.dirname(filePath))
-                .then(function() {
-                    // Cache and return the parsed object
-                    cache[filePath] = result
-                    deferred.resolve(result)
-                })
-        }
-        catch (err) {
-            // Make sure markdown content is marked as markdown.
-            if (path.extname(filePath) === '.md') 
-                content = '(markdown)' + content;
-                
-            cache[filePath] = content
-            deferred.resolve(content)
-        }
-    })
 
     return deferred.promise
 }
@@ -128,9 +135,9 @@ MainController.resolveReferences = function(json, rootFolder) {
  * */
 function translateMarkdown(obj) {
     std.forEachValueRecursive(obj, function(obj, key, value) {
-       if (std.isString(value) && value.indexOf('(markdown)') !== -1) {
-           obj[key] = markdown.toHTML(value.replace('(markdown)', ''))
-       }
+        if (std.isString(value) && value.indexOf('(markdown)') !== -1) {
+            obj[key] = markdown.toHTML(value.replace('(markdown)', ''))
+        }
     })
 }
 
@@ -154,5 +161,4 @@ controller.getModel('/en/home', function(err, data) {
     else {
         console.log('SUCCESS: Factory respond successfully!', data)
     }
-})
-*/
+})*/

@@ -1,6 +1,7 @@
 {
   "inherit": ["./config.json"],
   "view": "home.html",
+  "header": "../global/header.json",
   "title": "Alexander-Loehn.com",
   "intro": "./intro.md",
   "contents": [{

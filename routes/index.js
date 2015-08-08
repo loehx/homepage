@@ -10,7 +10,6 @@ router.get('*', function(req, res, next) {
     
     mainController.getModel(path, function(err, model) {
         if (err || !model) return next()
-        console.log('render ...', model.view);
         res.render(model.view, model, function(err, html) {
             if (err) return next(err)
             

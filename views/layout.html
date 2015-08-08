@@ -19,9 +19,12 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        {% block content %}
-        {% endblock %}
-
+        {% include "partials/header.html" %}
+        
+        {% block content %}{% endblock %}
+        
+        {% include "partials/footer.html" %}
+        
         <script src="/components/jquery/dist/jquery.min.js"></script>
         <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
