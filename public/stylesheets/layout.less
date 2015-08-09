@@ -1,2 +1,76 @@
 @import '../components/lesshat/build/lesshat';
 @import url(//fonts.googleapis.com/css?family=Raleway|Indie+Flower);
+
+.page {
+    height: 100vh;
+    margin: auto 0;
+}
+
+.site-header {
+    overflow: hidden;
+    position: relative;
+    header {
+        text-align: center;
+    }
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        .transition(transform 120s linear);
+        html.ready & {
+            .transform(translate3d(-1000px, 0, 0))
+        }
+    }
+    .skyline {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        .filter(brightness(0));
+        .transform(rotateX(90deg));
+        .transition(transform 1.5s cubic-bezier(0.1, 0.76, 0.59, 1) .5s, filter .5s ease-in-out);
+        .transform-origin(0 200%);
+        
+        html.ready & {
+            .transform(rotateX(0deg));
+        }
+        html.scrolled & {
+            .filter(brightness(1));
+        }
+    }
+    
+    /* Synchronise brightness fading of skyline with element beyond */
+    & + * {
+        .filter(brightness(0));
+        .transition(filter .5s ease-in-out);
+        
+        html.scrolled & {
+            .filter(brightness(1));
+        }
+    }
+    
+    
+    .logo {
+        width: 10%;
+        position: absolute;
+        left: 50%;
+        top: 20%;
+        margin-left: -5%;
+        .transform(scale(0) translate(30%, 30%));
+        .transition(transform 1s ease-in-out 1s);
+        
+        html.ready & {
+            .transform(scale(1) translate(0, 0));
+        
+            &:hover {
+                .transform(scale(1.1));
+            }
+        }
+    }
+    
+}
+
+section {
+    background-color: white;
+}
