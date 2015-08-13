@@ -7,10 +7,18 @@ $(document).ready(function() {
 
     setTimeout(function() {
         $html.addClass('ready');
+
+        var header = $('.site-header header');
+        header.affix({
+            offset: {
+                top: header.offset().top
+            }
+        })
     }, 1)
 
     documentHeight = $(document).height();
-    
+
+
     // DEBUGGING
     $('body').click(function() {
         $('html').toggleClass('ready');
