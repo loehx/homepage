@@ -8,12 +8,14 @@ $(document).ready(function() {
     setTimeout(function() {
         $html.addClass('ready');
 
+        // Make navbar sticky
         var header = $('.site-header header');
         header.affix({
             offset: {
                 top: header.offset().top
             }
         })
+        $('body').scrollspy({ target: '#navigation' });
     }, 1)
 
     documentHeight = $(document).height();
