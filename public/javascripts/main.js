@@ -19,12 +19,6 @@ $(document).ready(function() {
     }, 1)
 
     documentHeight = $(document).height();
-
-
-    // DEBUGGING
-    $('body').click(function() {
-        $('html').toggleClass('ready');
-    })
 })
 
 $window.one('scroll', function() {

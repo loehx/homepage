@@ -1,0 +1,92 @@
+@media screen and (min-width: 601px) {
+    .page {
+        height: 100vh;
+        margin: auto 0;
+    }
+    .site-header {
+        overflow: hidden;
+        position: relative;
+        height: 50vh;
+        padding-top: 15vh;
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            .transition(transform 120s linear);
+            html.ready & {
+                .transform(translate3d(-1000px, 0, 0))
+            }
+        }
+        .skyline {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            min-width: 1200px;
+        }
+        header {
+            text-align: center;
+            left: 0;
+            right: 0;
+            top: 0;
+            transition: background-color .1s linear;
+            height: 60px;
+            &.affix {
+                background-color: #000;
+                .box-shadow(0px -9px 10px 10px rgba(0, 0, 0, 0.5));
+            }
+        }
+        .logo {
+            width: 136px;
+            margin: -40px 0 -40px 0;
+            position: relative;
+            .transition(all .6s ease-in-out);
+        }
+        nav {
+            position: absolute;
+            top: 0;
+            left: 40%;
+            height: 100%;
+            opacity: 0;
+            margin-top: -100%;
+            .transition(opacity .6s ease-in-out);
+        }
+        .nav-tabs {
+            border-bottom: none;
+            a {
+                font-size: 14px;
+                color: white;
+                font-weight: bold;
+                line-height: 1;
+                padding: ((60px - 14px) * .5) 20px;
+                height: 60px;
+                position: relative;
+                border-radius: 0;
+                border: none;
+                margin: 0;
+                &:hover {
+                    color: black;
+                    background-color: white;
+                }
+                &:active {
+                    transform: scale(1);
+                }
+            }
+            li.active a {
+                border: none;
+            }
+        }
+        .affix .logo {
+            opacity: 1;
+            margin-left: -40%;
+        }
+        .affix nav {
+            opacity: 1;
+            margin-top: 0;
+        }
+    }
+    section {
+        background-color: white;
+    }
+}
