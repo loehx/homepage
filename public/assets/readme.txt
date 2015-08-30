@@ -1,1 +1,0 @@
-This folder will contain all files referenced by the model. (MainController - main.js)

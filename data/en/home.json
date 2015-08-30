@@ -1,10 +1,9 @@
 {
   "inherit": ["./config.json", "../global/config.json"],
-  "view": "home.html",
-  "title": "Alexander-Loehn.com",
-  "intro": "./intro.md",
+  "view": "content.html",
+  "title": "Alexander Löhn - Developer",
   "contents": [{
-      "view": "partials/article",
-      "text": "./articles/test-article.md"
+      "view": "partials/markdown",
+      "text": "./articles/home.md"
   }]
 }

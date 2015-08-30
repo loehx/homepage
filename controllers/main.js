@@ -74,6 +74,7 @@ MainController.parseFile = function(filePath) {
             deferred.resolve();
             break;
         default:
+            // Copy files to assets folder and return the asset url.
             var basename = path.basename(filePath)
             fse.copy(filePath, path.join(__dirname, '../public/assets/', basename), function(err) {
                 if (err) console.warn("Couldn't copy ", filePath, " to assets folder.", err)
@@ -136,6 +137,8 @@ MainController.resolveReferences = function(json, rootFolder) {
 function translateMarkdown(obj) {
     std.forEachValueRecursive(obj, function(obj, key, value) {
         if (std.isString(value) && value.indexOf('(markdown)') !== -1) {
+            // Add here more markdown functionalities ...
+            
             obj[key] = markdown.toHTML(value.replace('(markdown)', ''))
         }
     })
@@ -161,4 +164,5 @@ controller.getModel('/en/home', function(err, data) {
     else {
         console.log('SUCCESS: Factory respond successfully!', data)
     }
-})*/
+})
+*/

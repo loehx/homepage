@@ -1,3 +1,0 @@
-##Some article
-
-Text text text ...

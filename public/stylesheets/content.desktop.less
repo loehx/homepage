@@ -6,17 +6,16 @@
     .site-header {
         overflow: hidden;
         position: relative;
-        height: 70vh;
+        height: 50vh;
         padding-top: 15vh;
         .background {
-            min-height: 800px;
             position: absolute;
-            bottom: 0;
-            right: 0;
+            top: 0;
+            left: 0;
             height: 100%;
-            .transition(transform 300s linear);
+            .transition(transform 120s linear);
             html.ready & {
-                .transform(translate3d(1000px, 0, 0))
+                .transform(translate3d(-1000px, 0, 0))
             }
         }
         .skyline {

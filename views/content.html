@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+    
+    {% block content %} 
+        <main class="container">
+        {% for content in contents %}
+            <section class="content row">
+            {{ content.text | safe }}     
+            </section>
+        {% endfor %}
+        </main>
+    {% endblock %}
+    

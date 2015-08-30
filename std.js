@@ -11,8 +11,9 @@ std.forEachValueRecursive = function(obj, iteratee) {
     for (var k in obj) {
         var value = obj[k]
         iteratee(obj, k, value)
-        if (std.isPlainObject(value))
+        if (std.isPlainObject(value) || std.isArray(value)) {
             std.forEachValueRecursive(value, iteratee)
+        }
     }
 }
 
@@ -27,6 +28,9 @@ std.forEachObjectRecursive = function(obj, iteratee) {
         var value = obj[k]
         if (std.isPlainObject(value)) {
             iteratee(value)
+            std.forEachObjectRecursive(value, iteratee)
+        }
+        else if (std.isArray(value)) {
             std.forEachObjectRecursive(value, iteratee)
         }
     }
