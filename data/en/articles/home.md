@@ -1,4 +1,4 @@
-##Hallo, ...
+## Hallo, ...
 
 <span>test</span> TODO: Render HTML...
 
@@ -19,7 +19,7 @@ Konkrete Beispiele für gelöste Problemstellungen
 * Wartung von Webseiten
 * Webekampagnien in verschiedenen Webseiten
 
-##Interessen
+## Interessen
 * Web development
 * AngularJs (Erfahrung: 3 kleinere Projekte)
 * Node.js (Erfahrung: 5 kleinere Projekte)
@@ -27,12 +27,12 @@ Konkrete Beispiele für gelöste Problemstellungen
 * Management
 * Zukunftstechnologien
 
-##Programmiersprachen
+## Programmiersprachen
 * HTML, CSS, JavaScript seit Anbeginn
 * C# über 5 Jahre fast alltäglich
 * C++, Assembler, Visual Basic, Java, CoffeeScript, TypeScript einige kleinere Projekte
 
-##Plugins und Frameworks
+## Plugins und Frameworks
 * jQuery
 * Bootstrap
 * AngluarJS
@@ -47,12 +47,12 @@ Konkrete Beispiele für gelöste Problemstellungen
 * Mustache, JsRender, jQuery tmpl
 * ...
 
-##Datenbanken
+## Datenbanken
 * MSSQL
 * MYSQL
 * MONGO DB
 
-##Was suche ich?
+## Was suche ich?
 Eine Herausforderung die Perfektion verlangt und mir hilft, mich weiter zu entwickeln.
 Sympathische und erfahrene Kollegen die ihre Vision nicht aus den Augen verlieren. Leute, mit denen ich zielgerichtet und motiviert Projekte umsetzen kann.
 Vorgesetzte, die meine Ziele ebenso schätzen, wie die eigenen.

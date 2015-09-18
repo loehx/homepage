@@ -2,7 +2,11 @@ var fs = require("fs")
 var path = require("path")
 var Q = require("q")
 var std = require("../std")
-var markdown = require("markdown").markdown
+var markdown = require('markdown-it')({
+  html: true,
+  linkify: true,
+  typographer: true
+});
 var fse = require('fs-extra')
 
 /**
@@ -139,7 +143,7 @@ function translateMarkdown(obj) {
         if (std.isString(value) && value.indexOf('(markdown)') !== -1) {
             // Add here more markdown functionalities ...
             
-            obj[key] = markdown.toHTML(value.replace('(markdown)', ''))
+            obj[key] = markdown.render(value.replace('(markdown)', ''))
         }
     })
 }
