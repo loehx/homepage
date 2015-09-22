@@ -8,14 +8,24 @@ $(document).ready(function() {
     setTimeout(function() {
         $html.addClass('ready');
 
-        // Make navbar sticky
+        // Feature #1: Sticky navbar
         var header = $('.site-header header');
         header.affix({
             offset: {
                 top: header.offset().top
             }
         })
-        $('body').scrollspy({ target: '#navigation' });
+
+        // Feature #2: Dynamic navigation build up
+        var anchors = $('a[name]').map(function() {
+            return '<li><a href="#' + $(this).attr('name') + '">' + $(this).attr('title') + '</a></li>';
+        }).toArray();
+        $('#navigation .nav').html(anchors.join(''));
+        
+        // Feature #3: Scroll spy on navigation
+        $('body').scrollspy({
+            target: '#navigation'
+        });
     }, 1)
 
     documentHeight = $(document).height();

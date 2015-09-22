@@ -2,12 +2,14 @@ var fs = require("fs")
 var path = require("path")
 var Q = require("q")
 var std = require("../std")
-var markdown = require('markdown-it')({
-  html: true,
-  linkify: true,
-  typographer: true
-});
 var fse = require('fs-extra')
+var markdown = require('markdown-it')({
+        html: true,
+        linkify: true,
+        typographer: true
+    });
+
+require('../containers')(markdown);
 
 /**
  * Organizes the website content.
@@ -142,7 +144,7 @@ function translateMarkdown(obj) {
     std.forEachValueRecursive(obj, function(obj, key, value) {
         if (std.isString(value) && value.indexOf('(markdown)') !== -1) {
             // Add here more markdown functionalities ...
-            
+
             obj[key] = markdown.render(value.replace('(markdown)', ''))
         }
     })
