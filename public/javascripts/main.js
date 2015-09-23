@@ -21,11 +21,16 @@ $(document).ready(function() {
             return '<li><a href="#' + $(this).attr('name') + '">' + $(this).attr('title') + '</a></li>';
         }).toArray();
         $('#navigation .nav').html(anchors.join(''));
-        
+
         // Feature #3: Scroll spy on navigation
         $('body').scrollspy({
             target: '#navigation'
         });
+
+        // Feature #4: Smooth scroll for Google Chrome
+        if (!!window.chrome) {
+            $.getScript('/javascripts/smooth-scroll.js')
+        }
     }, 1)
 
     documentHeight = $(document).height();

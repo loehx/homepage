@@ -143,8 +143,7 @@ MainController.resolveReferences = function(json, rootFolder) {
 function translateMarkdown(obj) {
     std.forEachValueRecursive(obj, function(obj, key, value) {
         if (std.isString(value) && value.indexOf('(markdown)') !== -1) {
-            // Add here more markdown functionalities ...
-
+            // To add more markdown features, go to container.js ...
             obj[key] = markdown.render(value.replace('(markdown)', ''))
         }
     })
