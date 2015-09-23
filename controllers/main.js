@@ -24,6 +24,14 @@ var MainController = function() {
     this.getModel = MainController.prototype.getModel.bind(this)
 }
 
+// Assign assets folder
+MainController.assetsFolder = path.join(__dirname, '../public/assets/');
+fse.emptyDir(MainController.assetsFolder, function(err) {
+    if (err) return console.error(err);
+    console.log('Assets folder cleared. ' + MainController.assetsFolder);
+});
+
+MainController.cache = [];
 
 /**
  * Gets the specific data model using a virtual path
@@ -39,7 +47,6 @@ MainController.prototype.getModel = function(virtualPath, callback) {
         })
 }
 
-
 /**
  * Reads a file, tries to parse it as JSON and returns an 
  * object or a string if the file couldn't be parsed.
@@ -47,10 +54,22 @@ MainController.prototype.getModel = function(virtualPath, callback) {
  * @param {String} filePath Absolute path to the file.
  */
 MainController.parseFile = function(filePath) {
-    var cache = MainController.cache
+    var cache = MainController.cache;
+    return cache[filePath] || (cache[filePath] = MainController.uncachedParseFile(filePath));
+}
+
+/**
+ * Reads a file, tries to parse it as JSON and returns an 
+ * object or a string if the file couldn't be parsed.
+ * @param {String} filePath Absolute path to the file.
+ */
+MainController.uncachedParseFile = function(filePath) {
     var deferred = Q.defer()
     var extension = path.extname(filePath)
-
+    
+    if (!fs.existsSync(filePath))
+        return Q.resolve() & console.warn("File does not exist: " + filePath);
+    
     switch (extension) {
         case '.json':
             fs.readFile(filePath, 'utf-8', function(err, content) {
@@ -82,10 +101,11 @@ MainController.parseFile = function(filePath) {
         default:
             // Copy files to assets folder and return the asset url.
             var basename = path.basename(filePath)
-            fse.copy(filePath, path.join(__dirname, '../public/assets/', basename), function(err) {
-                if (err) console.warn("Couldn't copy ", filePath, " to assets folder.", err)
+            fse.copy(filePath, path.join(MainController.assetsFolder, basename), function(err) {
+                if (err) return console.warn("Couldn't copy ", filePath, " to assets folder.", err);
+                console.log("Copied file to assets folder: " + basename)
             })
-            deferred.resolve('/assets/' + basename)
+            deferred.resolve('/assets/' + basename);
             break;
     }
 
