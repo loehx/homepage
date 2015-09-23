@@ -63,6 +63,23 @@ $(document).ready(function() {
                 $.getScript('/javascripts/smooth-scroll.js')
             });
         }
+
+
+        initialize("Feature #5: Background parallax effect", function() {
+            var header = $('.site-header');
+            var headerBottom = header.height();
+            var background = header.find('.background');
+
+            function doParralax() {
+                var scrollTop = $window.scrollTop();
+                if (scrollTop < headerBottom) {
+                    background.css('transform', 'translate3d(0,' + Math.ceil(scrollTop * 0.5) + 'px,0)')
+                }
+            }
+
+            $window.scroll(doParralax);
+            doParralax();
+        })
     }, 1)
 
     documentHeight = $(document).height();
