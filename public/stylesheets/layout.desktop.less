@@ -2,6 +2,13 @@
     .page {
         height: 100vh;
         margin: auto 0;
+        opacity: 0;
+        .transform(translate3d(30px, 0, 0));
+        .transition(all .2s ease-in-out);
+        &.active {
+            .transform(translate3d(0, 0, 0));
+            opacity: 1;
+        }
     }
     .site-header {
         overflow: hidden;
@@ -33,6 +40,7 @@
             top: 0;
             transition: background-color .1s linear;
             height: 60px;
+            z-index: 1;
             &.affix {
                 background-color: #000;
                 .box-shadow(0px -9px 10px 10px rgba(0, 0, 0, 0.5));

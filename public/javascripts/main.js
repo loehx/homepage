@@ -3,33 +3,65 @@ var $html = $('html');
 var windowHeight = $window.height();
 var documentHeight = 0;
 
+
+var initialize = function(description, func) {
+    setTimeout(function() {
+        try {
+            func();
+            console.log('Initialize ' + description);
+        }
+        catch (err) {
+            console.error('Initialization failed for: ' + description, err);
+        }
+    }, 0);
+}
+
+
+
 $(document).ready(function() {
 
     setTimeout(function() {
         $html.addClass('ready');
 
-        // Feature #1: Sticky navbar
-        var header = $('.site-header header');
-        header.affix({
-            offset: {
-                top: header.offset().top
-            }
+
+        initialize("Feature #1: Sticky navbar", function() {
+            var header = $('.site-header header');
+            header.affix({
+                offset: {
+                    top: header.offset().top
+                }
+            })
         })
 
-        // Feature #2: Dynamic navigation build up
-        var anchors = $('a[name]').map(function() {
-            return '<li><a href="#' + $(this).attr('name') + '">' + $(this).attr('title') + '</a></li>';
-        }).toArray();
-        $('#navigation .nav').html(anchors.join(''));
 
-        // Feature #3: Scroll spy on navigation
-        $('body').scrollspy({
-            target: '#navigation'
+        initialize("Feature #2: Dynamic navigation build up", function() {
+            var anchors = $('a[name]').map(function() {
+                return '<li><a href="#' + $(this).attr('name') + '">' + $(this).attr('title') + '</a></li>';
+            }).toArray();
+            $('#navigation .nav').html(anchors.join(''));
+        })
+
+
+        initialize("Feature #3: Scroll spy on navigation", function() {
+            $('body').scrollspy({
+                target: '#navigation',
+                offset: $window.height() * 0.5
+            });
+
+            $('#navigation .nav li').on('activate.bs.scrollspy', function() {
+                // Find target section and give it the class: active
+                var target = $($(this).find('a').attr('href'));
+                target.addClass('active');
+                target.prevAll().addClass('active');
+                target.nextAll().removeClass('active');
+            });
         });
 
-        // Feature #4: Smooth scroll for Google Chrome
+
         if (!!window.chrome) {
-            $.getScript('/javascripts/smooth-scroll.js')
+            initialize("Feature #4: Smooth scroll for Google Chrome", function() {
+                $.getScript('/javascripts/smooth-scroll.js')
+            });
         }
     }, 1)
 
