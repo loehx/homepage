@@ -15,6 +15,11 @@
         position: relative;
         height: 70vh;
         padding-top: 15vh;
+        opacity: 0;
+        .transition(opacity .3s ease-in-out);
+        html.images-loaded & {
+            opacity: 1;
+        }
         .background {
             min-height: 800px;
             position: absolute;

@@ -80,6 +80,37 @@ $(document).ready(function() {
             $window.scroll(doParralax);
             doParralax();
         })
+
+
+        initialize("Feature #6: Page loading progress", function() {
+            var images = $('img');
+            var totalCount = images.length;
+            var current = 0;
+            var progressBar = $('#site-progress > div').css('opacity', '1');
+
+            // Wait for images to load
+            images.one('load', function() {
+                console.log('loaded', current, 'of', totalCount);
+                current++;
+                // Update progress bar
+                progressBar.css('width', (current / totalCount * 100) + '%')
+                if (current == totalCount) {
+                    // Set images-loaded classin html-tag
+                    $html.addClass('images-loaded');
+                    progressBar.css('opacity', '0');
+                }
+            }).each(function() {
+                if (this.complete)
+                    $(this).load();
+            });
+
+            // Set images-loaded automatically after 3 seconds
+            setTimeout(function() {
+                if (current == totalCount) return;
+                $html.addClass('images-loaded');
+                progressBar.css('opacity', '0');
+            }, 3000);
+        })
     }, 1)
 
     documentHeight = $(document).height();
