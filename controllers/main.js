@@ -68,7 +68,7 @@ MainController.uncachedParseFile = function(filePath) {
     var extension = path.extname(filePath)
     
     if (!fs.existsSync(filePath))
-        return Q.resolve() & console.warn("File does not exist: " + filePath);
+        return Q.resolve(null) & console.warn("File does not exist: " + filePath);
     
     switch (extension) {
         case '.json':

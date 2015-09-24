@@ -5,7 +5,7 @@ module.exports = function(markdown) {
 
     if (!markdown)
         throw "'markdown' parameter missing! Should be the 'markdown-it' instance!";
-
+    
     // Feature #2: Dynamic navigation build up
     markdown.use(container, 'page', {
         render: function(tokens, idx) {
@@ -13,7 +13,7 @@ module.exports = function(markdown) {
                 if (!tokens[idx].info) return '</section>';
                 var name = tokens[idx].info.match(/\".+\"/).toString();
                 name = std.trim(name, '" ');
-                return '<section class="page" id="' + std.kebabCase(name) + '"><a name="' + std.kebabCase(name) + '" title="' + name + '"></a>';
+                return '<section class="page" id="page-' + std.kebabCase(name) + '"><a name="page-' + std.kebabCase(name) + '" title="' + name + '"></a>';
             }
             catch (e) {
                 return e.message;

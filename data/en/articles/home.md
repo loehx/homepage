@@ -1,5 +1,4 @@
 ::: page "About me"
-
 ## Hallo, ...
 mein Name ist Alexander Löhn aka. Alex. Ich bin 24 Jahre alt, in Buxtehude geboren und wohne zurzeit in Hamburg.
 Ich arbeite seit Oktober 2015 als freiberuflicher Softwareentwickler, Schwerpunkt: Web.
@@ -34,9 +33,7 @@ Konkrete Beispiele für gelöste Problemstellungen
 * Software-Architektur
 * Management
 * Zukunftstechnologien
-:::
 
-::: page "Code & DB"
 ## Programmiersprachen
 * HTML, CSS, JavaScript seit Anbeginn
 * C# über 5 Jahre fast alltäglich
@@ -62,5 +59,4 @@ Konkrete Beispiele für gelöste Problemstellungen
 * Underscore
 * Modernizr
 * Mustache, JsRender, jQuery tmpl
-* ...
 :::

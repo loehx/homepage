@@ -1,4 +1,28 @@
 @import '../components/lesshat/build/lesshat';
-
 @import "content.desktop.less";
 @import "content.mobile.less";
+#page-3-rd-party {
+    padding: 20vh 999em 0 999em;
+    margin: 0 -999em;
+    .background-image(linear-gradient(-45deg, #e6f0a3 0%, #d2e638 50%, #c3d825 51%, #dbf043 100%));
+    h2 {
+        margin-bottom: 50px;
+        margin-bottom: 10vh;
+    }
+    ul {
+        margin: 10px;
+        padding: 0 0 0 10%;
+        direction: rtl;
+    }
+    li {
+        list-style-type: none;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, .2);
+        margin: 4px;
+        font-size: 16px;
+        display: inline-block;
+        &:hover {
+            background-color: rgba(255, 255, 255, .5);
+        }
+    }
+}

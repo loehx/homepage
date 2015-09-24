@@ -2,12 +2,30 @@
 @import url(//fonts.googleapis.com/css?family=Raleway|Indie+Flower);
 body {
     font-family: raleway;
+    cursor: default;
+    background-color: white;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Indie Flower';
 }
 
 @import "layout.desktop.less";
 @import "layout.mobile.less";
 
+/* Overwrite Bootstraps large grid size */
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px; // default: 1170px
+    }
+}
+
+
 /* Feature #6: Page loading progress */
+
 #site-progress {
     position: fixed;
     top: 0;
