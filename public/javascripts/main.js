@@ -90,7 +90,6 @@ $(document).ready(function() {
 
             // Wait for images to load
             images.one('load', function() {
-                console.log('loaded', current, 'of', totalCount);
                 current++;
                 // Update progress bar
                 progressBar.css('width', (current / totalCount * 100) + '%')
