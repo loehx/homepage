@@ -65,23 +65,25 @@ $(document).ready(function() {
         }
 
 
-        // TEMPORARILY DEPRECATED
-        
-        // initialize("Feature #5: Background parallax effect", function() {
-        //     var header = $('.site-header');
-        //     var headerBottom = header.height();
-        //     var background = header.find('.background');
+        // TODO: RENAME
+        initialize("Feature #5: Background parallax effect", function() {
+            var header = $('.site-header');
+            var background = header.find('.background, .logo');
+            var headerBottom = header.height();
+            var pixels = $window.width() * 0.2;
 
-        //     function doParralax() {
-        //         var scrollTop = $window.scrollTop();
-        //         if (scrollTop > headerBottom) {
-        //             background.css('transform', 'translate3d(0,' + Math.ceil(scrollTop * 0.5) + 'px,0)')
-        //         }
-        //     }
+            function doParralax() {
+                var scrollTop = $window.scrollTop();
+                if (scrollTop < headerBottom) {
+                    var progress = scrollTop / headerBottom;
+                    console.log('progress', progress)
+                    background.css('transform', 'translate3d(-' + Math.ceil(progress * pixels) + 'px,0,0)')
+                }
+            }
 
-        //     $window.scroll(doParralax);
-        //     doParralax();
-        // })
+            $window.scroll(doParralax);
+            doParralax();
+        })
 
 
         initialize("Feature #6: Page loading progress", function() {
