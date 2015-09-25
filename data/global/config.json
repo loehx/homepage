@@ -1,8 +1,7 @@
 {
     "favicon": "",
     "header": {
-        "backgroundImagePreview": "../images/clouds-1024h-preview.jpg",
-        "backgroundImage": "../images/clouds-1024h.jpg",
+        "backgroundImage": "../images/background.jpg",
         "skylineImage": "../images/skyline.svg",
         "logo": "../images/logo.svg"
     }

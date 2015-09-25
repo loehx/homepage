@@ -4,10 +4,10 @@ var Q = require("q")
 var std = require("../std")
 var fse = require('fs-extra')
 var markdown = require('markdown-it')({
-        html: true,
-        linkify: true,
-        typographer: true
-    });
+    html: true,
+    linkify: true,
+    typographer: true
+});
 
 require('../containers')(markdown);
 
@@ -66,10 +66,12 @@ MainController.parseFile = function(filePath) {
 MainController.uncachedParseFile = function(filePath) {
     var deferred = Q.defer()
     var extension = path.extname(filePath)
-    
-    if (!fs.existsSync(filePath))
-        return Q.resolve(null) & console.warn("File does not exist: " + filePath);
-    
+
+    if (!fs.existsSync(filePath)) {
+        console.warn("File does not exist: " + filePath);
+        return Q.resolve();
+    }
+
     switch (extension) {
         case '.json':
             fs.readFile(filePath, 'utf-8', function(err, content) {

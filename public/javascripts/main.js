@@ -65,21 +65,23 @@ $(document).ready(function() {
         }
 
 
-        initialize("Feature #5: Background parallax effect", function() {
-            var header = $('.site-header');
-            var headerBottom = header.height();
-            var background = header.find('.background');
+        // TEMPORARILY DEPRECATED
+        
+        // initialize("Feature #5: Background parallax effect", function() {
+        //     var header = $('.site-header');
+        //     var headerBottom = header.height();
+        //     var background = header.find('.background');
 
-            function doParralax() {
-                var scrollTop = $window.scrollTop();
-                if (scrollTop < headerBottom) {
-                    background.css('transform', 'translate3d(0,' + Math.ceil(scrollTop * 0.5) + 'px,0)')
-                }
-            }
+        //     function doParralax() {
+        //         var scrollTop = $window.scrollTop();
+        //         if (scrollTop > headerBottom) {
+        //             background.css('transform', 'translate3d(0,' + Math.ceil(scrollTop * 0.5) + 'px,0)')
+        //         }
+        //     }
 
-            $window.scroll(doParralax);
-            doParralax();
-        })
+        //     $window.scroll(doParralax);
+        //     doParralax();
+        // })
 
 
         initialize("Feature #6: Page loading progress", function() {
