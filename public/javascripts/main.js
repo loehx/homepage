@@ -4,11 +4,27 @@ var windowHeight = $window.height();
 var documentHeight = 0;
 
 
-var initialize = function(description, func) {
+/**
+ * Initializes a module
+ * 
+ * options
+ *  watchBrowserResize: reinitializes the module after the user resized the browser.
+ */
+var initialize = function(description, func, options) {
     setTimeout(function() {
+        if (!options) options = {};
+
         try {
             func();
-            console.log('Initialize ' + description);
+            console.log((options.reinit ? '(re-init) ' : '(init) ') + description);
+
+            // On browser resize ...
+            if (!options.reinit && options.watchBrowserResize) {
+                $window.on('resized', function() {
+                    options.reinit = true;
+                    initialize(description, func, options);
+                });
+            }
         }
         catch (err) {
             console.error('Initialization failed for: ' + description, err);
@@ -22,6 +38,23 @@ $(document).ready(function() {
 
     setTimeout(function() {
         $html.addClass('ready');
+
+
+        initialize("Introduce 'resized' event", function() {
+            $window.resize(debounce(function() {
+                $window.trigger('resized');
+            }, 200));
+        })
+
+
+        initialize("Check wether the viewport is portrait or landscape", function() {
+            var landscape = $window.width() > $window.height();
+            $html
+                .toggleClass('landscape', landscape)
+                .toggleClass('portrait', !landscape);
+        }, {
+            watchBrowserResize: true
+        })
 
 
         initialize("Feature #1: Sticky navbar", function() {
@@ -65,24 +98,30 @@ $(document).ready(function() {
         }
 
 
-        // TODO: RENAME
         initialize("Feature #5: Background parallax effect", function() {
             var header = $('.site-header');
-            var background = header.find('.background, .logo');
-            var headerBottom = header.height();
-            var pixels = $window.width() * 0.2;
+            var background = header.find('.background, header');
+            var headerBottom = header.outerHeight();
+            var pixels = ($('.container').width() - header.find('.logo').width()) / 2;
+            var done = false;
 
             function doParralax() {
                 var scrollTop = $window.scrollTop();
                 if (scrollTop < headerBottom) {
-                    var progress = scrollTop / headerBottom;
-                    console.log('progress', progress)
+                    var progress = Math.min(1, scrollTop / headerBottom);
                     background.css('transform', 'translate3d(-' + Math.ceil(progress * pixels) + 'px,0,0)')
+                    if (done) $html.toggleClass('scrolled-header', done = false);
+                }
+                else if (!done) {
+                    $html.toggleClass('scrolled-header', done = true);
+                    background.css('transform', 'translate3d(-' + pixels + 'px,0,0)')
                 }
             }
 
-            $window.scroll(doParralax);
+            $window.on('scroll.bgParallax', doParralax);
             doParralax();
+        }, {
+            watchBrowserResize: true
         })
 
 
