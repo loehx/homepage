@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
-    
-    {% block content %} 
+
+    {% block content %}
         <main>
         {% for content in contents %}
-            <section class="content container">
-            {{ content.text | safe }}     
+            <section id="{{ content.name }}">
+               <a name="{{ content.name }}" title="{{ content.title }}"></a>
+               {% include "./partials/" + content.type + ".html" %}
             </section>
         {% endfor %}
         </main>
     {% endblock %}
-    

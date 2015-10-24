@@ -1,5 +1,4 @@
 {
-  "inherit": ["./config.json", "../global/config.json"],
   "view": "content.html",
   "title": "Alexander-Loehn.com"
 }

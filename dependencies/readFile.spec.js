@@ -1,6 +1,5 @@
-var dependencies = require("../index")();
+var dependencies = require('../dependencies');
 var assert = require("assert");
-
 
 describe("readFile", function() {
     it("Should read a simple text file (sync)", function(done) {
@@ -9,7 +8,7 @@ describe("readFile", function() {
             assert.equal(fs.readFileSync(__filename), content);
             done();
         })
-    }) 
+    })
 
     it("Should read a simple text file (async)", function(done) {
         dependencies.resolve(function(readFile, fs) {

@@ -1,9 +1,25 @@
 {
-  "inherit": ["./config.json", "../global/config.json"],
-  "view": "content.html",
-  "title": "Alexander Löhn - Developer",
-  "contents": [{
-      "view": "partials/markdown",
-      "text": "./articles/home.md"
-  }]
+	"view": "content.html",
+	"title": "Alexander Löhn - Developer",
+	"contents": [{
+		"name": "about-me",
+		"type": "markdown",
+		"title": "Über mich",
+		"content": "include:home/about-me.md"
+	}, {
+		"name": "resume",
+		"type": "markdown",
+		"title": "Lebenslauf",
+		"content": "include:home/resume.md"
+	}, {
+		"name": "interests",
+		"type": "markdown",
+		"title": "Interessen",
+		"content": "include:home/interests.md"
+	}, {
+		"name": "third-party",
+		"type": "markdown",
+		"title": "3rd Party",
+		"content": "include:home/third-party.md"
+	}]
 }

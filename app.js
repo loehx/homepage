@@ -4,18 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var nunjucks = require('nunjucks')
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
-
-// view engine setup
-nunjucks.configure('views', {
-    autoescape: true,
-    express: app
-});
+var nunjucks = require('./nunjucks')(app);
 
 app.enable('view cache')
 app.locals.pretty = true;

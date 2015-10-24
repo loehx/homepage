@@ -1,18 +1,18 @@
-module.exports = function(readFile, errHandler) {
+module.exports = function(readFile, error) {
     return function(filePath, callback) {
 
         if (callback) {
             readFile(filePath, function(data) {
                 if (!data) return callback(null);
+                var obj;
 
                 try {
-                    var obj = JSON.parse(data);
-                    callback(obj);
+                    obj = JSON.parse(data);
                 }
                 catch (err) {
-                    errHandler("Failed to parse json file", err);
-                    callback(null);
+                    error("Failed to parse json file: " + filePath, err);
                 }
+                callback(obj);
             })
         }
         else {
@@ -23,7 +23,7 @@ module.exports = function(readFile, errHandler) {
                 return JSON.parse(json);
             }
             catch (err) {
-                errHandler("Failed to parse json file", err);
+                error("Failed to parse json file", err);
                 return null;
             }
         }

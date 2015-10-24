@@ -1,0 +1,9 @@
+{
+    "favicon": "",
+    "header": {
+        "backgroundImage": "assets/background.jpg",
+        "skylineImage": "assets/skyline.svg",
+        "logo": "assets/logo.svg"
+    },
+    "author": "Alexander Löhn"
+}

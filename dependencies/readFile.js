@@ -1,9 +1,9 @@
-module.exports = function(fs, errHandler) {
+module.exports = function(fs, error) {
     return function(filePath, callback) {
         if (callback) {
             fs.readFile(filePath, 'utf-8', function(err, data) {
                 if (err) {
-                    errHandler("Failed to read file.", err)
+                    error("Failed to read file.", err)
                     callback(null);
                 }
                 else {
@@ -16,10 +16,9 @@ module.exports = function(fs, errHandler) {
                 return fs.readFileSync(filePath, 'utf-8');
             }
             catch (err) {
-                errHandler(err);
+                error(err);
                 return null;
             }
         }
-
     }
 }

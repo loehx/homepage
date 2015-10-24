@@ -1,7 +1,7 @@
-module.exports = function(fs, errHandler) {
+module.exports = function(fs, error) {
     return function(filePath) {
         if (!fs.existsSync(filePath)) {
-            errHandler("Required file does not exist!", filePath);
+            error("Required file does not exist!", filePath);
             return false;
         }
         else {
