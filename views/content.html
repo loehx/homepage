@@ -2,10 +2,10 @@
 
     {% block content %}
         <main>
-        {% for content in contents %}
-            <section id="{{ content.name }}">
-               <a name="{{ content.name }}" title="{{ content.title }}"></a>
-               {% include "./partials/" + content.type + ".html" %}
+        {% for item in contents %}
+            <section id="{{ item.name }}" class="{{ item.type }}-view">
+               <a name="{{ item.name }}" title="{{ item.title }}"></a>
+               {% include "./partials/" + item.type + ".html" %}
             </section>
         {% endfor %}
         </main>

@@ -1,0 +1,10 @@
+{
+	"view": "content.html",
+	"title": "Imprint | Alexander Löhn - Developer",
+	"contents": [{
+		"name": "imprint",
+		"type": "markdown",
+		"title": "Imprint",
+		"content": "include:articles/imprint.md"
+	}]
+}

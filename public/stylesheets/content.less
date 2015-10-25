@@ -1,31 +1,51 @@
 @import '../components/lesshat/build/lesshat';
 @import "content.desktop.less";
 @import "content.mobile.less";
-#third-party {
-    padding: 20vh 999em 0 999em;
-    margin: 0 -999em;
-    .background-image(linear-gradient(-45deg, #e6f0a3 0%, #d2e638 50%, #c3d825 51%, #dbf043 100%));
+.plugins-view {
+   font-family: 'courier new';
+   padding: 10vh 999em;
+   min-height: 0;
+   margin: 0 -999em;
+   overflow: hidden;
+   // .background-image(linear-gradient(-60deg, #ffffff 0%, #60cfed 50%, #ffffff 51%, #ffffff 100%));
 
+   .row {
+      position: relative;
+   }
 
+   .box {
+      position: absolute;
+      z-index: -2;
+      width: 1000em;
+      height: 1000em;
+      background-color: #60cfed;
+      transform-origin: top left;
+      left: 50%;
+      top: 0;
+      box-shadow: -40px -40px 0 0 rgba(96, 207, 237, 0.53);
+      .transform(rotate(-60deg) translateX(-50%));
+   }
 
-    h2 {
-        margin-bottom: 50px;
-        margin-bottom: 10vh;
-    }
-    ul {
-        margin: 10px;
-        padding: 0 0 0 10%;
-        direction: rtl;
-    }
-    li {
-        list-style-type: none;
-        padding: 30px;
-        background-color: rgba(255, 255, 255, .2);
-        margin: 4px;
-        font-size: 16px;
-        display: inline-block;
-        &:hover {
-            background-color: rgba(255, 255, 255, .5);
-        }
-    }
+   h2 {
+      float: left;
+      width: 10%;
+   }
+   ul {
+      float: right;
+      width: 54%;
+      margin-top: 5vh;
+   }
+   li {
+      list-style-type: none;
+      padding: 15px;
+      background-color: rgba(255,255,255,0.2);
+      margin: 4px;
+      font-size: 15px;
+      color: #00619c;
+      display: inline-block;
+      float: right;
+      &:hover {
+         background-color: rgba(255, 255, 255, .5);
+      }
+   }
 }

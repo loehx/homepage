@@ -5,21 +5,21 @@
 		"name": "about-me",
 		"type": "markdown",
 		"title": "Über mich",
-		"content": "include:home/about-me.md"
+		"content": "include:articles/about-me.md"
 	}, {
 		"name": "resume",
 		"type": "markdown",
 		"title": "Lebenslauf",
-		"content": "include:home/resume.md"
+		"content": "include:articles/resume.md"
 	}, {
 		"name": "interests",
 		"type": "markdown",
 		"title": "Interessen",
-		"content": "include:home/interests.md"
+		"content": "include:articles/interests.md"
 	}, {
 		"name": "third-party",
-		"type": "markdown",
+		"type": "plugins",
 		"title": "3rd Party",
-		"content": "include:home/third-party.md"
+		"plugins": "include:../plugins.json"
 	}]
 }

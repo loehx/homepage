@@ -17,6 +17,8 @@ module.exports = function(app) {
 
 var filters = {
    markdown: function(str) {
-      return markdown.render(str);
+      return ~str.indexOf('\n')
+         ? markdown.render(str)
+         : markdown.renderInline(str);
    }
 }

@@ -1,9 +1,40 @@
 {
     "favicon": "",
     "header": {
-        "backgroundImage": "assets/background.jpg",
-        "skylineImage": "assets/skyline.svg",
-        "logo": "assets/logo.svg"
+        "backgroundImage": "/assets/background.jpg",
+        "skylineImage": "/assets/skyline.svg",
+        "logo": "/assets/logo.svg"
     },
-    "author": "Alexander Löhn"
+    "author": "Alexander Löhn",
+    "footer": {
+      "details": [
+          "Alexander Löhn",
+          "20535 Hamburg",
+          "Germany",
+          " ",
+          "+49 151 / 211 20 247",
+          "[Alexander.Loehn@gmail.com](mailto:Alexander.Loehn@gmail.com)"
+      ],
+      "links": [
+          {
+            "title": "Imprint",
+            "url": "/en/imprint"
+         },
+         {
+           "title": "aloehn @ Google+",
+           "url": "#"
+         },
+         {
+           "title": "Alexander Löhn | Facebook",
+           "url": "#"
+         },
+         {
+           "title": "loehx | Github",
+           "url": "#"
+         }
+      ],
+      "contactMail": "alexander.loehn@gmail.com",
+      "linkText": "Let's go ...",
+      "linkTextHovered": "... get in touch."
+   }
 }
