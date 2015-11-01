@@ -11,7 +11,8 @@
 
         <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="/stylesheets/layout.css">
-        <link rel="stylesheet" href="/stylesheets/content.css">
+        <link rel="stylesheet" href="/stylesheets/partials.css">
+        <link rel="stylesheet" href="/stylesheets/custom.css">
 
         <script src="/components/modernizr/modernizr.js"></script>
     </head>
@@ -21,11 +22,11 @@
         <![endif]-->
 
         {% include "partials/header.html" %}
-        
+
         {% block content %}{% endblock %}
-        
+
         {% include "partials/footer.html" %}
-        
+
         <script src="/components/jquery/dist/jquery.min.js"></script>
         <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -37,15 +38,15 @@
         <!--    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));-->
         <!--    ga('create','UA-XXXXX-X','auto');ga('send','pageview');-->
         <!--</script>-->
-        
+
         <!--[if lte IE 8]>
         <script>
             alert("Internet Explorer 8 and less are not supported!");
         </script>
         <!-- <![ENDIF]-->
-        
+
         <script src="/javascripts/just-debounce.js"></script>
         <script src="/javascripts/main.js"></script>
-        
+
     </body>
 </html>

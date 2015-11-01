@@ -1,0 +1,87 @@
+@import '../components/lesshat/build/lesshat';
+
+@media screen and (min-width: 601px) {
+   /* desktop only */
+
+}
+
+@media screen and (max-width: 600px) {
+   /* mobile only */
+
+}
+
+
+#interests {
+   .row {
+      padding: 20vh 0;
+   }
+
+   .text {
+      float: right;
+      padding: 40px 0 50px 30px;
+      border-left: 1px dashed #CCC;
+
+      ul {
+         list-style: circle;
+         padding-left: 30px;
+
+         li {
+            margin-bottom: 5px;
+         }
+      }
+
+      h2 {
+         font-family: 'Fredericka the Great';
+         display: inline-block;
+         border-bottom: 1px dashed #BBB;
+      }
+   }
+
+   figure {
+      float: left;
+   }
+}
+
+
+#looking-for {
+   .row {
+      padding: 10vh 999em;
+      margin: 0 -999em;
+      background-color: black;
+      color: white;
+   }
+
+   .text {
+      padding: 60px 0;
+
+      h2 {
+         font-family: 'Fredericka the Great';
+         color: #64B6E4;
+         margin-bottom: 30px;
+      }
+
+      ul {
+         padding: 0 30px;
+         list-style: none;
+      }
+
+      li {
+         margin-top: 1em;
+         position: relative;
+         &:before {
+            content: '#';
+            left: -20px;
+            position: absolute;
+            color: #64B6E4;
+         }
+      }
+   }
+}
+
+
+#plugins {
+   h2 {
+      font-family: 'Fredericka the Great';
+      padding: 0 100px;
+   }
+}

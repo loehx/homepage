@@ -14,7 +14,7 @@ var nunjucks = require('./nunjucks')(app);
 app.enable('view cache')
 app.locals.pretty = true;
 
-
+var publicFolder = path.join(__dirname, 'public');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -22,8 +22,8 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(require('less-middleware')(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(require('less-middleware')(publicFolder));
+app.use(express.static(publicFolder));
 
 app.use('/', routes);
 app.use('/users', users);

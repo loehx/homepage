@@ -1,0 +1,16 @@
+
+{% set textCols = 6 if item.image else 12 %}
+{% set textCols = item.columns if item.columns else textCols %}
+
+<div class="container paragraph">
+   <div class="row">
+      <div class="text col-md-{{ textCols }}">
+         {{ item.text | markdown | safe }}
+      </div>
+      {% if (item.image) %}
+      <figure class="col-md-{{ 12 - textCols }}">
+         {{ item.image | params({ inkscape: '' }) | image | safe }}
+      </figure>
+      {% endif %}
+   </div>
+</div>

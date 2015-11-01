@@ -1,44 +1,41 @@
 @import '../components/lesshat/build/lesshat';
 @import url(//fonts.googleapis.com/css?family=Raleway|Fredericka+the+Great);
 body {
-    font-family: raleway;
-    cursor: default;
-    background-color: white;
-    text-shadow: 0 0 1px rgba(0,0,0,0.1);
-    -webkit-font-smoothing: antialiased;
+   font-family: raleway;
+   cursor: default;
+   background-color: white;
+   // text-shadow: 0 0 1px rgba(0,0,0,0.1);
+   -webkit-font-smoothing: antialiased;
+   letter-spacing: 0.5px;
+   word-spacing: 1px;
 }
-
 main {
-    overflow: hidden;
+   overflow: hidden;
 }
-
 @import "layout.desktop.less";
 @import "layout.mobile.less";
 
 /* Overwrite Bootstraps large grid size */
-
 @media (min-width: 992px) {
-    .container {
-        width: 970px; // default: 1170px
-    }
+   .container {
+      width: 970px; // default: 1170px
+   }
 }
 
-
 /* Feature #6: Page loading progress */
-
 #site-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 5px;
-    width: 100%;
-    z-index: 1000;
-    div {
-        opacity: 0;
-        height: 5px;
-        background-color: #3273C7;
-        border-radius: 3px;
-        .transition(opacity .3s ease-in-out, width .2s ease-in-out);
-    }
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   height: 5px;
+   width: 100%;
+   z-index: 1000;
+   div {
+      opacity: 0;
+      height: 5px;
+      background-color: #3273c7;
+      border-radius: 3px;
+      .transition(opacity .3s ease-in-out, width .2s ease-in-out);
+   }
 }
