@@ -2,10 +2,10 @@
 	"view": "content.html",
 	"title": "Alexander Löhn - Developer",
 	"contents": [{
-		"name": "about-me",
+		"name": "intro",
 		"type": "paragraph",
 		"title": "Über mich",
-		"text": "include:articles/about-me.md"
+		"text": "include:articles/intro.md"
 	}, {
 		"name": "resume",
 		"type": "paragraph",

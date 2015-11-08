@@ -1,13 +1,18 @@
 @import '../components/lesshat/build/lesshat';
-@import url(//fonts.googleapis.com/css?family=Raleway|Fredericka+the+Great);
+@import url(//fonts.googleapis.com/css?family=Raleway:400,200,600|Fredericka+the+Great);
 body {
    font-family: raleway;
    cursor: default;
    background-color: white;
+
    // text-shadow: 0 0 1px rgba(0,0,0,0.1);
    -webkit-font-smoothing: antialiased;
+   filter:blur(0);
+   -webkit-filter: blur(0); // Chrome bug: position relative causes text blurry
    letter-spacing: 0.5px;
    word-spacing: 1px;
+   font-size: 12px;
+   line-height: 1.6;
 }
 main {
    overflow: hidden;

@@ -1,5 +1,7 @@
 var nunjucks = require('nunjucks');
-var markdown = require('markdown-it')();
+var markdown = require('markdown-it')({
+	breaks: true
+});
 
 module.exports = function(app) {
 	// view engine setup
@@ -41,7 +43,7 @@ var filters = {
 			return url;
 		}
 	},
-   image: function(url) {
-      return '<img src="' + url + '">'; 
-   }
+	image: function(url) {
+		return '<img src="' + url + '">';
+	}
 }
