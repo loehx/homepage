@@ -1,10 +1,9 @@
 {
-	"view": "content.html",
-	"title": "Imprint | Alexander Löhn - Developer",
+	"title": "Impressum | Alexander Löhn - Softwareentwickler",
 	"contents": [{
 		"name": "imprint",
-		"type": "markdown",
-		"title": "Imprint",
-		"content": "include:articles/imprint.md"
+		"type": "paragraph",
+		"title": "Impressum",
+		"text": "include:articles/imprint.md"
 	}]
 }

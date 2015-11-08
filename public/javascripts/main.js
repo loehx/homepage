@@ -11,24 +11,38 @@ var documentHeight = 0;
  *  watchBrowserResize: reinitializes the module after the user resized the browser.
  */
 var initialize = function(description, func, options) {
-	setTimeout(function() {
-		if (!options) options = {};
+	if (!options) options = {};
 
-		try {
-			func(options);
-			console.log((options.reinit ? '(re-init) ' : '(init) ') + description);
+	__init(description, func, options);
 
-			// On browser resize ...
-			if (!options.reinit && options.watchBrowserResize) {
-				$window.on('resized', function() {
-					options.reinit = true;
-					initialize(description, func, options);
-				});
-			}
-		} catch (err) {
-			console.error('Initialization failed for: ' + description, err);
-		}
-	}, 0);
+	// On browser resize ...
+	if (options.watchFrom || options.watchTo) {
+		$window.on('resized', function() {
+			options.resized = true;
+			__init(description, func, options);
+		});
+	}
+}
+
+function __init(description, func, options) {
+	try {
+		var run = true;
+		var ww = $window.width();
+		if (options.watchFrom) run = ww >= options.watchFrom;
+		if (run && options.watchTo) run = ww <= options.watchTo;
+		if (!run) return;
+
+		var label = 'RUN: ';
+		if (options.resized) label = 'RUN AGAIN: (window resized to ' + ww + 'px) ';
+
+		console.log(label + description);
+		var message = func(options);
+		if (message)
+			console.log(' > "' + message + '"');
+
+	} catch (err) {
+		console.error('Initialization failed for: ' + description, err);
+	}
 }
 
 
@@ -52,7 +66,7 @@ $(document).ready(function() {
 				.toggleClass('landscape', landscape)
 				.toggleClass('portrait', !landscape);
 		}, {
-			watchBrowserResize: true
+			watchFrom: 1
 		})
 
 
@@ -63,6 +77,8 @@ $(document).ready(function() {
 					top: header.offset().top
 				}
 			})
+		}, {
+			watchFrom: 601
 		})
 
 
@@ -119,7 +135,7 @@ $(document).ready(function() {
 			$window.on('scroll.bgParallax', doParralax);
 			doParralax();
 		}, {
-			watchBrowserResize: true
+			watchFrom: 601
 		})
 
 

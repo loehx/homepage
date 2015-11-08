@@ -1,10 +1,9 @@
 {
-	"view": "content.html",
-	"title": "Alexander Löhn - Developer",
+	"title": "Alexander Löhn - Softwareentwickler",
 	"contents": [{
 		"name": "intro",
 		"type": "paragraph",
-		"title": "Über mich",
+		"title": "Willkommen",
 		"text": "include:articles/intro.md"
 	}, {
 		"name": "resume",
@@ -14,25 +13,44 @@
 	}, {
 		"name": "plugins",
 		"type": "plugins",
-		"title": "Plugins",
+		"title": "Plugins & Frameworks",
 		"plugins": "include:../plugins.json"
 	}, {
 		"name": "interests",
 		"type": "plugins",
 		"title": "Interessen",
 		"plugins": [
-			"Web development",
-			"AngularJs",
+			"Web-Entwicklung",
+			"Angular Js",
 			"Node.js",
 			"Software-Architektur",
 			"Management",
+			"SCRUM",
 			"Zukunftstechnologien"
+		]
+	}, {
+		"name": "languages",
+		"type": "plugins",
+		"title": "Sprachen",
+		"plugins": [
+			"Deutsch",
+			"Englisch",
+			"HTML",
+			"CSS",
+			"JavaScript",
+			"C#",
+			"C++",
+			"Assembler",
+			"Visual Basic",
+			"Java",
+			"CoffeeScript",
+			"TypeScript"
 		]
 	}, {
 		"name": "looking-for",
 		"type": "paragraph",
-		"title": "Looking for",
+		"title": "Fokus",
 		"text": "include:articles/looking-for.md",
-		"image": "assets/hole.jpg"
+		"image": "/assets/hole.jpg"
 	}]
 }
