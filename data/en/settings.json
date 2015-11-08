@@ -1,11 +1,11 @@
 {
-  "lang": "en",
-  "langs": [{
-    "code": "en",
-    "name": "English"
-  },
-  {
-    "code": "de",
-    "name": "German"
-  }]
+	"view": "content.html",
+	"lang": "en",
+	"langs": [{
+		"code": "en",
+		"name": "English"
+	}, {
+		"code": "de",
+		"name": "German"
+	}]
 }

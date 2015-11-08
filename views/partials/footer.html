@@ -1,20 +1,20 @@
 <footer>
    <div class="container">
       <div class="row">
-         <ul class="col-sm-4 details left">
+         <ul class="col-sm-3 details left col-sm-offset-2">
             {% for detail in footer.details %}
             <li>{{ detail | markdown | safe }}</li>
             {% endfor %}
          </ul>
 
-         <div class="col-sm-4 contact">
+         <div class="col-sm-2 contact">
             <a href="mailto:{{ footer.contactMail }}" class="link">
                <span>{{ footer.linkText }}</span>
                <span>{{ footer.linkTextHovered }}</span>
             </a>
          </div>
 
-         <ul class="col-sm-4 links right">
+         <ul class="col-sm-3 links right">
             {% for link in footer.links %}
             <li>
                <a href="{{ link.url }}">{{ link.title }}</a>

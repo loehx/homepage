@@ -1,33 +1,56 @@
 {
-	"view": "content.html",
 	"title": "Alexander Löhn - Developer",
 	"contents": [{
 		"name": "intro",
 		"type": "paragraph",
-		"title": "Über mich",
+		"title": "Home",
 		"text": "include:articles/intro.md"
 	}, {
 		"name": "resume",
 		"type": "paragraph",
-		"title": "Lebenslauf",
+		"title": "Resume",
 		"text": "include:articles/resume.md"
 	}, {
 		"name": "plugins",
 		"type": "plugins",
-		"title": "Plugins",
+		"title": "Third party",
 		"plugins": "include:../plugins.json"
 	}, {
 		"name": "interests",
-		"type": "paragraph",
-		"title": "Interessen",
-		"text": "include:articles/interests.md",
-		"image": "assets/coggle.jpg",
-		"columns": "4"
+		"type": "plugins",
+		"title": "Interests",
+		"plugins": [
+			"Web development",
+			"AngularJs",
+			"Node.js",
+			"Software architecture",
+			"Management",
+			"SCRUM",
+			"Future technologies"
+		]
+	}, {
+		"name": "languages",
+		"type": "plugins",
+		"title": "Languages",
+		"plugins": [
+			"German",
+			"English",
+			"HTML",
+			"CSS",
+			"JavaScript",
+			"C#",
+			"C++",
+			"Assembler",
+			"Visual Basic",
+			"Java",
+			"CoffeeScript",
+			"TypeScript"
+		]
 	}, {
 		"name": "looking-for",
 		"type": "paragraph",
 		"title": "Looking for",
 		"text": "include:articles/looking-for.md",
-		"image": "assets/hole.jpg"
+		"image": "/assets/hole.jpg"
 	}]
 }

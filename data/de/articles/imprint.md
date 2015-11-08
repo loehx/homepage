@@ -4,8 +4,7 @@ Information in accordance with section 5 TMG
 
 Alexander Löhn
 Chateuneufstr. 21c
-20535 Hamburg
-Germany
+20535 Hamburg, Germany
 
 ## Contact
 

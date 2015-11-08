@@ -3,12 +3,11 @@ var dependency = module.exports = function(absolutePath, parseJsonFile, fs, log,
 
    return function(virtualPath, callback) {
       var dataPath = absolutePath('/data');
-      var filePath = dataPath + '/' + virtualPath.trim('/') + '.json';
+      var filePath =  path.join(dataPath, virtualPath.trim('/') + '.json');
       var rootPath = path.dirname(filePath);
-      if (!fs.existsSync(filePath))
-         return error("Missing file to resolve " + virtualPath + ": " + filePath) & callback(undefined);
-
       var model = parseJsonFile(filePath);
+      if (!model)
+         return error("Failed to resolve file " + virtualPath + ": " + filePath) || callback(undefined);
 
       resolveSettings(rootPath, dataPath, function(settings) {
 

@@ -15,7 +15,7 @@ var initialize = function(description, func, options) {
 		if (!options) options = {};
 
 		try {
-			func();
+			func(options);
 			console.log((options.reinit ? '(re-init) ' : '(init) ') + description);
 
 			// On browser resize ...
@@ -151,6 +151,32 @@ $(document).ready(function() {
 				progressBar.css('opacity', '0');
 			}, 3000);
 		})
+
+		initialize("Feature #7: Smooth scroll to section", function(options) {
+			$('a[href^="#"').click(function(event) {
+				event.preventDefault();
+				var hash = $(this).attr('href');
+				var target = $(hash);
+				var estimation = parseInt(target.offset().top) - parseInt(options.marginTop || 0);
+				var actual = parseInt($('body').scrollTop());
+				var distance = estimation > actual ? estimation - actual : actual - estimation;
+				var duration = (distance * 0.2) + options.speed;
+
+				$('html, body').animate({
+					scrollTop: estimation
+				}, duration, function() {
+					if (history.pushState) {
+						history.pushState(null, null, hash);
+					} else {
+						location.hash = hash.trim('#');
+					}
+				});
+			});
+		}, {
+			marginTop: '100px',
+			speed: 300
+		});
+
 	}, 1)
 
 	documentHeight = $(document).height();

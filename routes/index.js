@@ -9,6 +9,8 @@ router.get('*', function(req, res, next) {
 
 	dependencies.resolve(function(getModel) {
 		getModel(path, function(model) {
+			if (!model) return next();
+
 			res.render(model.view, model, function(err, html) {
 				if (err) return next(err) || console.error(err);
 

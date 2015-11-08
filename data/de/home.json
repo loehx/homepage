@@ -1,4 +1,38 @@
 {
-  "view": "content.html",
-  "title": "Alexander-Loehn.com"
+	"view": "content.html",
+	"title": "Alexander Löhn - Developer",
+	"contents": [{
+		"name": "intro",
+		"type": "paragraph",
+		"title": "Über mich",
+		"text": "include:articles/intro.md"
+	}, {
+		"name": "resume",
+		"type": "paragraph",
+		"title": "Lebenslauf",
+		"text": "include:articles/resume.md"
+	}, {
+		"name": "plugins",
+		"type": "plugins",
+		"title": "Plugins",
+		"plugins": "include:../plugins.json"
+	}, {
+		"name": "interests",
+		"type": "plugins",
+		"title": "Interessen",
+		"plugins": [
+			"Web development",
+			"AngularJs",
+			"Node.js",
+			"Software-Architektur",
+			"Management",
+			"Zukunftstechnologien"
+		]
+	}, {
+		"name": "looking-for",
+		"type": "paragraph",
+		"title": "Looking for",
+		"text": "include:articles/looking-for.md",
+		"image": "assets/hole.jpg"
+	}]
 }

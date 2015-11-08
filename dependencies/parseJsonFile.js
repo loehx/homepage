@@ -23,7 +23,7 @@ module.exports = function(readFile, error) {
                 return JSON.parse(json);
             }
             catch (err) {
-                error("Failed to parse json file", err);
+                error("Failed to parse json file " + filePath, err);
                 return null;
             }
         }

@@ -1,11 +1,11 @@
 {
-  "lang": "de",
+  "lang": "en",
   "langs": [{
     "code": "en",
-    "name": "Englisch"
+    "name": "English"
   },
   {
     "code": "de",
-    "name": "Deutsch"
+    "name": "German"
   }]
 }

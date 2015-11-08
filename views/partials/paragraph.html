@@ -1,15 +1,17 @@
 
-{% set textCols = 6 if item.image else 12 %}
+{% set textCols = 4 if item.image else 8 %}
 {% set textCols = item.columns if item.columns else textCols %}
+{% set imageCols = 8 - textCols if item.image else 0 %}
+{% set offset = ((12 - textCols - imageCols) / 2) %}
 
 <div class="container paragraph">
    <div class="row">
-      <div class="text col-md-{{ textCols }}">
+      <div class="text col-md-{{ textCols }} col-md-offset-{{ offset }}">
          {{ item.text | markdown | safe }}
       </div>
       {% if (item.image) %}
-      <figure class="col-md-{{ 12 - textCols }}">
-         {{ item.image | params({ inkscape: '' }) | image | safe }}
+      <figure class="col-md-{{ 8 - textCols }}">
+         {{ item.image | image | safe }}
       </figure>
       {% endif %}
    </div>
