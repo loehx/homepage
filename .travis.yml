@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+- '0.11'
+- '0.10'
+deploy:
+  provider: openshift
+  user: alexloehn@gmail.com
+  password:
+    secure: jdt0h/TpOis20vdas3XCFILhYc7R+G2HN2cqsSdgBnBb1rt4LwJM1OEEH69gaJ1XJqhgL2HxT/IomGRYmoREotHCGVaZR4IsOaw6P6w/McgVN2McCv1DafoIrntapIccH5KqeKKJPZoI8lsqimIaUBzyhWZ2C46qt4niVAVu+u4HiVGJiFjfu4xMWwDWFwvYjXJhY4d+vKcKa4fJxe6rthOEsCiPQ+f8BcmITt6rvdXD1Hc9MR1gxy9StTqKpfKtVewWmi8qLQcXq4G31+b1elzSB6e5OkUhFQKHkGj+MKuCJt96zz/6Eq54dY0QYYy93lUmHGI7NLM0IZDmP7F/3MvbQPYu6a5+cRlr4ow1kcqyjgvNy/w1jY6oh6Wvzwo3LHyoNYin3vu5cNaonSb34RA+l8P12cveO5L4brAbydaPzuoZ8P48ZzK1L/zeyXgVr9b+afgi3ZFhkgqP6cSCOJ6IDnMO8B3Vn8visOOlUrVUDkzgRL0Rq5TeHxTvvSQxNFEa6yQDBBeGHdE0ZMlWSaIsj1IPWrE/HpI3VePVZvs5wtkeLI7S3LBMpoPPPETDVRI/mWJ5LY7jTEVcxD4tzoiij5F8gdgI1iBQWNbVxu93Fa4S5Rwl0/PruwkBLUQc1FZDCfv1mOxHlCAwOU9exL1N2Zw29uO1X5rJ24bIiu8=
+  app: homepage
+  domain: loehx
+  on:
+    repo: loehx/homepage
