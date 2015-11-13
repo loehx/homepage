@@ -6,7 +6,7 @@ describe("resolveFileReferences - Resolving of JSON files", function() {
 	beforeEach(function() {
 		dependencies.register('parseJsonFile', function() {
 			return function(path, callback) {
-				assert.equal("C:\\test\\test.json", path);
+				assert.equal("C:/test/test.json", path.replace(/\\/g, '/'));
 				callback({
 					works: true
 				});
