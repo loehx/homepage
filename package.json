@@ -31,6 +31,7 @@
 	},
 	"scripts": {
 		"prepublish": "gulp default",
-		"test": "gulp"
+		"test": "gulp",
+		"start": "node server.js"
 	}
 }
