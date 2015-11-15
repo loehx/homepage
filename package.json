@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "prepublish": "gulp default",
-    "build": "gulp",
+    "postinstall": "gulp default",
     "start": "node server.js"
   },
   "main": "server.js",
