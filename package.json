@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "prepublish": "gulp default",
-    "postinstall": "gulp default",
+    "postinstall": "bower install",
     "start": "node server.js"
   },
   "main": "server.js",
