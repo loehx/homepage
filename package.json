@@ -5,7 +5,8 @@
   "scripts": {
     "prepublish": "gulp default",
     "postinstall": "bower install",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "gulp test"
   },
   "main": "server.js",
   "dependencies": {
