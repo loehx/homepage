@@ -1,5 +1,5 @@
 [
-   "jQuery",
+	"jQuery",
 	"Bootstrap",
 	"AngluarJS",
 	"Jasmine",
@@ -10,7 +10,7 @@
 	"Flexslider",
 	"BxSlider",
 	"Swype",
-	"Express (node.js)",
+	"Express.js",
 	"LESSHAT",
 	"Underscore",
 	"Lodash",
@@ -22,5 +22,11 @@
 	"Nunjucks",
 	"Grunt",
 	"Gulp",
-	"Yeoman"
+	"Yeoman",
+	"Nunjucks",
+	"Glob",
+	"async",
+	"bower",
+	"npm",
+	"Travis CI"
 ]
