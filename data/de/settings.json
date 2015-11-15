@@ -7,5 +7,30 @@
 	}, {
 		"code": "de",
 		"name": "Deutsch"
-	}]
+	}],
+	"footer": {
+		"details": [
+			"Alexander Löhn",
+			"20535 Hamburg",
+			" ",
+			"+49 151 / 211 20 247",
+			"[Alexander.Loehn@gmail.com](mailto:Alexander.Loehn@gmail.com)"
+		],
+		"links": [{
+			"title": "Impressum",
+			"url": "/de/imprint"
+		}, {
+			"title": "loehx | Github",
+			"url": "https://github.com/loehx"
+		}, {
+			"title": "Alexander Löhn @ Google+",
+			"url": "https://plus.google.com/+AlexanderLöhn"
+		}, {
+			"title": "Alexander Löhn | Facebook",
+			"url": "https://www.facebook.com/alexander.loehn"
+		}],
+		"contactMail": "alexander.loehn@gmail.com",
+		"linkText": "Let's go ...",
+		"linkTextHovered": "... get in touch."
+	}
 }
