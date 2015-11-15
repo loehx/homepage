@@ -1,6 +1,6 @@
 # Alexander Löhn
-## Softwareentwickler
-Über 10 Jahre Programmiererfahrung
-Davon mehr als 6 Jahre hauptberuflich
-Spezialisiert auf Web-Entwicklung
+## Software developer
+Over 10 years of programming experience
+6 of them in a full-time job
+Specialised in web-development
 Freelancer

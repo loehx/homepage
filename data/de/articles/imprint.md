@@ -10,7 +10,7 @@ Spaldingstr. 41
 ## Kontakt
 
 Telefon: 015121120247
-E-Mail: alexloehn@yahoo.de
+E-Mail: alexloehn@gmail
 Internetadresse: www.alexander-loehn.de
 
 

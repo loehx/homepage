@@ -1,16 +1,21 @@
-## Lebenslauf
-Zuvor war ich 2 Jahre bei einer Internet-Agentur tätig in der ich große Web-Seiten mitentwickelt habe. Zunächst im BE-Team, bin ich nach einem Jahr ins FE-Team gewechselt. Hier konnte ich viel Fachwissen über Web-Entwicklung sammeln und lernen, wie Projekte zeitnah und preiswert umzusetzen sind.
+## Resume
 
-Meine Ausbildung absolvierte ich in einer Spedition. Als Softwareentwickler, ohne Spezialisierung auf FE oder BE, habe ich dort einige große Projekte selbstständig geplant und verwirklicht. In der Zeit habe ich mir viel Fachwissen über Software-Architektur, Schnittstellen und Datenbanken angeeignet.
+At the age of 13, I started programming some small applications to understand computers and see what is possible. I have had a huge interest in computers and still have.
 
-Bereits im Alter von 13 Jahren habe ich in meiner Freizeit viele kleine Projekte konzipiert. Dabei lernte ich selbstständig allgemeineGrundkenntnisse über die Programmierung . Die Arbeitsweise des Prozessors in Zusammenarbeit mit dem Arbeitsspeicher und der Festplatte hat mich zu dem Zeitpunkt sehr fasziniert. Ich wollte herausfinden was mit meinem Code geschieht  und was Performance überhaupt bedeutet.
+Worth mentioning:
+* First web sites using HTML, CSS and JavaScript.
+* First Java application to read and write files.
+* Some years later: Rebuild standard functions from C++ in assembler to find out how the CPU and memory works (for instance: memcpy).
 
-Konkrete Beispiele für gelöste Problemstellungen
+I have made my apprenticeship in a logistics company. As a software developer without specification on frontend or backend, I have planned and realized several projects independently. In the meantime I have learned a lot about software architecture, interfaces and data bases.
 
-* Verschiedene Datenquellen durch Schnittstellen in einer Datenbank automatisiert vereinen
-* Automatischer Datei- und Ordnerversandt unter Nutzung verschiedener Protokolle (HTTP, FTP, SMTP, ...)
-* Standard-Funktionen aus C++ in Assembler nachbauen. Beispielsweise memcpy.
-* Weboberfläche für Mitarbeiter und Kunden, um Dateien mit Datensätzen zu verknüpfen und auszutauschen (IE6 Kompatibel)
-* Komplexe Webseiten mit Webshop
-* Wartung von Webseiten
-* Webekampagnien auf verschiedenen Webseiten
+* Import logistic data from several countries through different interfaces and store them in a single database automatically.
+* Watch and send files and directories automatically over HTTP(S), (S)FTP and SMTP.
+* Build up a web interface for employees and customers to share documents referring to specific shipments all over the world (IE6 compatible).
+
+After my apprenticeship and 1 additional year as a trained developer I started working a small web agency, building web sites for big companies such as Beiersdorf. As a member of a backend team I was switching to frontend after 1 1/2 years. I have learned a lot about web development, content management systems, SEO, test-driven development and social media as well as working in a timely manner and producing highly effective code.
+
+* Build up complex web sites in a team using Sitecore (CMS).
+* Develop and publish some promotional campaigns.
+* Support design agencies, clients and colleagues.
+* Maintaining several web sites.

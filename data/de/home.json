@@ -33,8 +33,6 @@
 		"type": "plugins",
 		"title": "Sprachen",
 		"plugins": [
-			"Deutsch",
-			"Englisch",
 			"HTML",
 			"CSS",
 			"JavaScript",
