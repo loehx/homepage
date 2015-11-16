@@ -7,7 +7,7 @@ Worth mentioning:
 * First Java application to read and write files.
 * Some years later: Rebuild standard functions from C++ in assembler to find out how the CPU and memory works (for instance: memcpy).
 
-I have made my apprenticeship in a logistics company. As a software developer without specification on frontend or backend, I have planned and realized several projects independently. In the meantime I have learned a lot about software architecture, interfaces and data bases.
+I did my apprenticeship in a logistics company. As a software developer without specification on frontend or backend, I have planned and realized several projects independently. In the meantime I have learned a lot about software architecture, interfaces and data bases.
 
 * Import logistic data from several countries through different interfaces and store them in a single database automatically.
 * Watch and send files and directories automatically over HTTP(S), (S)FTP and SMTP.

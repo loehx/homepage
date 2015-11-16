@@ -28,5 +28,7 @@
 	"async",
 	"bower",
 	"npm",
-	"Travis CI"
+	"Travis CI",
+	"Heroku",
+	"openShift"
 ]

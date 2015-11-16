@@ -25,6 +25,7 @@
 			"Node.js",
 			"Software architecture",
 			"Management",
+			"Leadership",
 			"SCRUM",
 			"Future technologies"
 		]
@@ -32,18 +33,7 @@
 		"name": "languages",
 		"type": "plugins",
 		"title": "Languages",
-		"plugins": [
-			"HTML",
-			"CSS",
-			"JavaScript",
-			"C#",
-			"C++",
-			"Assembler",
-			"Visual Basic",
-			"Java",
-			"CoffeeScript",
-			"TypeScript"
-		]
+		"plugins": "include:../languages.json"
 	}, {
 		"name": "looking-for",
 		"type": "paragraph",
