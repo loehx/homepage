@@ -36,7 +36,7 @@ After my apprenticeship and 1 additional year as a trained developer I started w
 * Issue Tracking
 * SCRUM
 
-Currently I am working at Lustitia Limited, which is an energy consulting company. In a team of 4 people, we are building up a complex web site that gives you the ability to check your energy consumption and get tipps to improve it. Some of the things I am working with are:
+Currently I am working at Lustitia Limited, which is an energy consulting company. In a team of 4 people we are building up a complex web site that gives people and companies the ability to check their energy consumption and get tips to improve it. Some of the things I am working with are:
 
 * SCRUM
 * AngularJs
