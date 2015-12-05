@@ -30,5 +30,10 @@
 	"npm",
 	"Travis CI",
 	"Heroku",
-	"openShift"
+	"OpenShift",
+	"Git",
+	"Mercurial",
+	"Unity (.NET)",
+	"Entity Framework (.NET)",
+	"SiteCore (CMS)"
 ]
