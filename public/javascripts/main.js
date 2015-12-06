@@ -148,8 +148,10 @@ $(document).ready(function() {
 			// Wait for images to load
 			images.one('load', function() {
 				current++;
+
 				// Update progress bar
 				progressBar.css('width', (current / totalCount * 100) + '%')
+
 				if (current == totalCount) {
 					// Set images-loaded classin html-tag
 					$html.addClass('images-loaded');
@@ -157,7 +159,7 @@ $(document).ready(function() {
 				}
 			}).each(function() {
 				if (this.complete)
-					$(this).load();
+					$(this).trigger('load');
 			});
 
 			// Set images-loaded automatically after 3 seconds
@@ -165,7 +167,7 @@ $(document).ready(function() {
 				if (current == totalCount) return;
 				$html.addClass('images-loaded');
 				progressBar.css('opacity', '0');
-			}, 3000);
+			}, 5000);
 		})
 
 		initialize("Feature #7: Smooth scroll to section", function(options) {
