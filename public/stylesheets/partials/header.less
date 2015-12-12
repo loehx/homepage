@@ -61,7 +61,6 @@
       .filter(drop-shadow(1px 1px 4px rgba(0,0,0,.3)));
       .transform(translateX(-50%));
       .transition(opacity .3s ease-in-out 1s);
-
       @media @mobile {
          width: 125px;
       }
@@ -88,6 +87,9 @@
          font-style: italic;
          line-height: 1;
          padding: 22px;
+         @media @tablet {
+            padding: 22px 10px;
+         }
          height: 60px;
          position: relative;
          border-radius: 0;
@@ -96,7 +98,7 @@
          &:focus {
             background-color: transparent;
          }
-         &:hover {
+         html.no-touch &:hover {
             color: black;
             background-color: white;
          }

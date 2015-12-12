@@ -1,4 +1,4 @@
-## Resume
+## Lebenslauf
 
 Bereits im Alter von 13 Jahren habe ich in meiner Freizeit viele kleine Projekte programmiert. Dabei lernte ich selbstständig allgemeine Grundkenntnisse über Programmierung. Die Arbeitsweise des Prozessors in Zusammenarbeit mit dem Arbeitsspeicher und der Festplatte hat mich zu dem Zeitpunkt sehr fasziniert. Ich wollte herausfinden was mit meinem Code geschieht  und was Performance bedeutet.
 

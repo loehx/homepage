@@ -1,16 +1,16 @@
 
-{% set textCols = 4 if item.image else 8 %}
+{% set textCols = 4 if item.image else 12 %}
 {% set textCols = item.columns if item.columns else textCols %}
 {% set imageCols = 8 - textCols if item.image else 0 %}
 {% set offset = ((12 - textCols - imageCols) / 2) %}
 
 <div class="container paragraph">
    <div class="row">
-      <div class="text col-md-{{ textCols }} col-md-offset-{{ offset }}">
+      <div class="text col-sm-{{ textCols }} col-md-offset-{{ offset }}">
          {{ item.text | markdown | safe }}
       </div>
       {% if (item.image) %}
-      <figure class="col-md-{{ 8 - textCols }}">
+      <figure class="col-sm-{{ 8 - textCols }}">
          {{ item.image | image | safe }}
       </figure>
       {% endif %}
