@@ -1,10 +1,4 @@
-@import '../components/lesshat/build/lesshat';
-@media screen and (min-width: 601px) {
-   /* desktop only */
-}
-@media screen and (max-width: 600px) {
-   /* mobile only */
-}
+@import 'mixins';
 h1,
 h2,
 h3 {
@@ -96,8 +90,14 @@ main .container {
    }
    .text {
       padding: 60px 0;
+      @media @mobile {
+         padding: 30px 0 0;
+      }
       h2 {
          color: #64b6e4;
+         @media @mobile {
+            margin-bottom: 30px;
+         }
       }
       ul {
          padding: 0 30px;
@@ -117,6 +117,9 @@ main .container {
    figure img {
       max-height: 430px;
       margin-left: -40px;
+      @media @mobile {
+         width: 125%;
+      }
    }
    .invisible {
       opacity: 0;
