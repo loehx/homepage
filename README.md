@@ -1,5 +1,5 @@
 
-# Alexander-Loehn.com [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# Alexander-Loehn.com [![Build Status](https://travis-ci.org/loehx/homepage.svg?branch=master)](https://travis-ci.org/loehx/homepage)
 
 My personal homepage about me as a web developer.
 
@@ -30,12 +30,17 @@ All these files are pushed to the repository.
 * [js-beautify](https://github.com/beautify-web/js-beautify) - To clean up the outgoing HTML.
 * [markdown-it](https://github.com/markdown-it/markdown-it) - To render markdown to HTML in my paragraphs. This is the best markdown compiler I know.
 
+## Deployment
+
+After pushing new chages to [Github](https://github.com/), [Travis-CI](https://travis-ci.org/loehx) pulls and builds the homepage using [Gulp](http://gulpjs.com/). If the unit tests were successful, it gets published to [Heroku](https://www.heroku.com/) automatically.
+
+Last build: https://travis-ci.org/loehx/homepage
+
 ## Browser / Device support
 
 * **Fully supported**: IE>8, Edge, Chrome, Firefox, iPad devices, iPhone devices
 * **Mostly supported**: Smartphones and tablets with Android
 * **Not supported**: IE<9, Windows Phone, Black Berry
-
 
 ## Languages
 
