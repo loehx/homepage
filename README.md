@@ -53,7 +53,7 @@ Last build: https://travis-ci.org/loehx/homepage
 * **#2**: Dynamic navigation build up
 * **#3**: Scroll spy on navigation
 * **#4**: Smooth scroll for Google Chrome
-* **#5**: Background parallax effect (TEMPORARILY DEPRECATED)
+* **#5**: Background parallax effect
 * **#6**: Page loading progress
 * **#7**: Smooth scroll to section
 
