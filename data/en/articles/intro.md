@@ -5,4 +5,4 @@ Over 10 years of programming experience
 Specialised in web development
 Freelancer
 
-Not available until 1st of April 2016
+Not available at the moment
