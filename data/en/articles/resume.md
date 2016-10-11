@@ -38,11 +38,11 @@ After my apprenticeship and 1 additional year as a trained developer I started w
 
 Currently I am working at Lustitia Limited, which is an energy consulting company. In a team of 4 people we are building up a complex web site that gives people and companies the ability to check their energy consumption and get tips to improve it. Some of the things I am working with are:
 
-* Git
+* Git / Mercurial
 * SCRUM
-* AngularJs
-* C#.NET
+* Angular JS / Angular Material
+* Node JS / TypeScript
+* C#.NET / .NET Core
 * Entity Framework
 * Unity (Dependency Injection)
-* MSSQL
-* CouchDB
+* MSSQL, Cassandra, InfluxDB, REDIS

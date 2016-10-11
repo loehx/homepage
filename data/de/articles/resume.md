@@ -37,11 +37,11 @@ Nach 4 Jahren entschied ich mich dann für eine kleine Internet-Agentur, in der 
 
 Aktuell arbeite ich für Lustitia Limited an einem großen Website-Projekt mit. In einem Team aus 4 Leuten erstellen wir eine Komplexe Webseite, auf der sich Unternehmen und Privatpersonen registrieren und ihren Verbrauch von Strom, Gas, Wasser, usw. analysieren können. Außerdem erhalten Sie Tipps, wie sie ihren Verbrauch optimieren können und ob eine Verbesserung wirklich den gewünschten Effekt hatte, wie es beispielsweise vom Hersteller einer Heizung versprochen wurde. Hier arbeiten wir mit folgenden Technologien:
 
-* Git
+* Git / Mercurial
 * SCRUM
-* AngularJs
-* C#.NET
+* Angular JS / Angular Material
+* Node JS / TypeScript
+* C#.NET / .NET Core
 * Entity Framework
 * Unity (Dependency Injection)
-* MSSQL
-* CouchDB
+* MSSQL, Cassandra, InfluxDB, REDIS
