@@ -21,13 +21,11 @@
 		"title": "Interessen",
 		"plugins": [
 			"Web-Entwicklung",
-			"Angular Js",
+			"Angular.js",
 			"Node.js",
+			"C#",
 			"Software-Architektur",
-			"Management",
-			"Leadership",
-			"SCRUM",
-			"Zukunftstechnologien"
+			"SCRUM"
 		]
 	}, {
 		"name": "languages",
