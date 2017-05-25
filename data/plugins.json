@@ -1,5 +1,5 @@
 [
-	"jQuery++",
+	"jQuery",
 	"Bootstrap",
 	"Jasmine",
 	"Mocha",
@@ -30,9 +30,9 @@
 	"Git",
 	"Mercurial",
 	"Unity .NET",
-	"Entity Framework .NET ++",
+	"Entity Framework .NET",
 	"SiteCore (CMS)",
-	"Angular.js ++",
+	"Angular.js",
 	"Angular Material",
 	"SendGrid"
 ]
