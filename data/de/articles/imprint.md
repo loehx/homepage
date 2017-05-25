@@ -3,8 +3,8 @@
 Angaben gemäß § 5 TMG
 
 Alexander Löhn
-Spaldingstr. 41
-20097 Hamburg
+Katenweide 5
+20539 Hamburg
 
 
 ## Kontakt

@@ -1,12 +1,10 @@
 [
-	"jQuery",
+	"jQuery++",
 	"Bootstrap",
-	"AngluarJS",
 	"Jasmine",
 	"Mocha",
 	"Q",
-	"ES6 Promise",
-	"Google Maps API",
+	"Google Maps",
 	"Flexslider",
 	"BxSlider",
 	"Swype",
@@ -16,8 +14,6 @@
 	"Lodash",
 	"Modernizr",
 	"Mustache",
-	"JsRender",
-	"jQuery tmpl",
 	"Handlebars",
 	"Nunjucks",
 	"Grunt",
@@ -33,7 +29,11 @@
 	"OpenShift",
 	"Git",
 	"Mercurial",
-	"Unity (.NET)",
-	"Entity Framework (.NET)",
-	"SiteCore (CMS)"
+	"Unity .NET",
+	"Entity Framework .NET ++",
+	"SiteCore (CMS)",
+	"Angular.js ++",
+	"Angular Material",
+	"SendGrid",
+
 ]
