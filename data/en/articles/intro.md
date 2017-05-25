@@ -1,7 +1,7 @@
 # Alexander Löhn
 ## Software developer
-Over 10 years of programming experience
-6 of them in a full-time job
+Over 12 years of programming experience
+7 of them in a full-time job
 Specialised in web development
 Freelancer
 
