@@ -9,7 +9,7 @@ Skills I have gained before starting my apprenticeship:
 * Assembler
 * C#.NET
 
-I did my apprenticeship in a logistics company. As a software developer without specification on frontend or backend, I have planned and realized several projects independently. In the meantime I have learned a lot about software architecture, interfaces and data bases. A short list of projects I have done myself and skills I have earned:
+I did my apprenticeship in a logistics company. As a software developer without specification on frontend or backend, I have planned and realized several projects independently. In the meantime I have learned a lot about software architecture, interfaces and data bases. A list of projects I have done myself and skills I have earned:
 
 * Import logistics data from several countries through different interfaces and store them in a single database automatically.
 * Watch and send files and directories automatically over HTTP(S), (S)FTP and SMTP.
