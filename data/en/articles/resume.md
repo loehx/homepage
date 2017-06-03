@@ -8,7 +8,7 @@
 * C#.NET
 * Assembler
 
-**2 1/2 years apprenticeship plus 1 year trained at [a. hartrodt (GmbH & Co KG)](http://www.hartrodt.com/en/)** (logistics company)
+**2 1/2 years apprenticeship plus 1 year at [a. hartrodt (GmbH & Co KG)](http://www.hartrodt.com/en/)** (logistics company)
 
 * Software and database architecture
 * Web, database and Windows Form projects
