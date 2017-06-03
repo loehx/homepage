@@ -1,48 +1,54 @@
 ## Resume
 
-At the age of 13, I started programming some small applications to understand computers and see what is possible. I have had a huge interest in computers and still have.
+**Started programming at the age of 13**
 
-Skills I have gained before starting my apprenticeship:
 * Web - HTML, CSS, JavaScript
 * Java
 * C++
-* Assembler
 * C#.NET
+* Assembler
 
-I did my apprenticeship in a logistics company. As a software developer without specification on frontend or backend, I have planned and realized several projects independently. In the meantime I have learned a lot about software architecture, interfaces and data bases. A list of projects I have done myself and skills I have earned:
+**2 1/2 years apprenticeship plus 1 year trained at [a. hartrodt (GmbH & Co KG)](http://www.hartrodt.com/en/)** (logistics company)
 
-* Import logistics data from several countries through different interfaces and store them in a single database automatically.
+* Software and database architecture
+* Web, database and Windows Form projects
+* Import logistics data from several countries through different interfaces and store them in a central database.
 * Watch and send files and directories automatically over HTTP(S), (S)FTP and SMTP.
 * Build up a web interface for employees and customers to share documents referring to specific shipments all over the world (IE6 compatible).
 * VB.NET
 * C#.NET
 * Java
-* MSSQL
-* Entity Framework
-* Team foundation
+* MySQL and MSSQL
+* Entity Framework .NET
 
-After my apprenticeship and 1 additional year as a trained developer I started working a small web agency, building web sites for big companies such as Beiersdorf. As a member of a backend team I was switching to frontend after 1 1/2 years. I have learned a lot about working in a timely manner and how to produce highly effective code that is easy to maintain. Some activities and skills:
+**1 1/2 years backend and 1 year frontend at [neveling.net](http://neveling.net/)** (web agency)
 
-* Build up complex web sites in a team using Sitecore (CMS).
-* Develop and publish some promotional campaigns.
-* Support design agencies, clients and colleagues.
-* Maintaining several web sites.
-* Content Management System
-* SEO
-* Social media
-* Unit testing
-* C#.NET
-* Extended web skills
-* Issue Tracking
-* SCRUM
-
-Currently I am working at Lustitia Limited, which is an energy consulting company. In a team of 4 people we are building up a complex web site that gives people and companies the ability to check their energy consumption and get tips to improve it. Some of the things I am working with are:
-
+* Build complex web sites in a team using [Sitecore](http://www.sitecore.net/) (CMS)
+* Develop and publish promotional campaigns (e.g. [NIVEA #MomWasRight](http://www.nivea.com/pages/momwasright))
+* Support design agencies, clients and colleagues
+* Maintaining several web sites (such as [Beiersdorf.com](http://beiersdorf.com))
+* Working with SCRUM
 * Git / Mercurial
-* SCRUM
-* Angular JS / Angular Material
-* Node JS / TypeScript
-* C#.NET / .NET Core
-* Entity Framework
+* SEO
+* Social media APIs
+* Unit / integration testing
+* C#.NET
+* HTML, CSS, LESS, JavaScript, TypeScript
+* Issue Tracking using [YouTrack](https://www.jetbrains.com/youtrack)
+
+**Currently working at: [Lustitia Limited](http://lustitia.de/)** (energy consulting / software startup)
+
+* Organize software requirements, estimate efforts and coordinate implementation using SCRUM
+* Develop frontend and backend concepts (software architecture)
+* Implement frontend and backend modules (coding)
+* Hire developers
+* Moderate SCRUM meetings
+* C#.NET and .NET Core
+* Angular.js
+* Angular Material ([Google's Material Design](https://material.io/))
+* Node.js
+* Entity Framework .NET
 * Unity (Dependency Injection)
-* MSSQL, Cassandra, InfluxDB, REDIS
+* MSSQL, InfluxDB, REDIS, PostgreSQL
+* YouTrack, Trello, JIRA
+* TeamCity (JetBrains)
