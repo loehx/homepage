@@ -38,8 +38,8 @@ Last build: https://travis-ci.org/loehx/homepage
 
 ## Browser / Device support
 
-* **Fully supported**: IE>8, Edge, Chrome, Firefox, iPad devices, iPhone devices
-* **Mostly supported**: Smartphones and tablets with Android
+* **Fully supported**: IE>8, Edge, Chrome, Firefox, iPad, iPhone
+* **Mostly supported**: Android smartphones and tablets
 * **Not supported**: IE<9, Windows Phone, Black Berry
 
 ## Languages
