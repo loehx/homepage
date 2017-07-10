@@ -5,9 +5,9 @@ My personal homepage about me as a web developer.
 
 ## Page contents
 
-The page contents are in a self made up structure of JSON and Markdown files. The assets get copied to into the `public` folder to get accessed from outside. The url request `/en/home` searches for a `home.json` in the `data/en` folder. This files represents the model, that gets passed to the view.
+The page contents are in a self made up structure of JSON and Markdown files. The assets get copied to the `public` folder to get accessed from outside. The url request `/en/home` searches for a `home.json` in the `data/en` folder. This file represents the model, that gets passed to the view.
 
-All files named `settings.json` in the current or parent folder are getting included automatically in each model that gets requested.
+All files named `settings.json` in the current or parent folder are getting included automatically in each model.
 
 A JSON property value starting with `include:` gets resolved automatically. For instance: `"plugins": "include:../plugins.json"` becomes `"plugins": { "plugin #1": "dependence" }` or `"text": "include:./text.md"` becomes `"plugins": "##Title\nThis is a text."`.
 
